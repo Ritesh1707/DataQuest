@@ -38,16 +38,25 @@ const getLesson = async (req, res) => {
   }
 };
 
+const { getDb } = require('../utils/db');
+const { ObjectId } = require('mongodb');
+
 const submitExercise = async (req, res) => {
   try {
     const { userId } = req.user; // From Auth Middleware
     console.log('Submitting Exercise for UserID:', userId);
-    console.log('Request Body:', req.body);
     const { exerciseId, code, userCode } = req.body;
 
-    const exercise = await prisma.exercise.findUnique({
-      where: { id: exerciseId },
-    });
+    const db = await getDb();
+    const exercisesV = db.collection('Exercise');
+    const lessonsV = db.collection('Lesson');
+    const progressV = db.collection('UserProgress');
+    const usersV = db.collection('User');
+    const badgesV = db.collection('Badge');
+    const userBadgesV = db.collection('UserBadge');
+
+    // Fetch Exercise
+    const exercise = await exercisesV.findOne({ _id: new ObjectId(exerciseId) });
 
     if (!exercise) return res.status(404).json({ message: 'Exercise not found' });
 
@@ -56,68 +65,61 @@ const submitExercise = async (req, res) => {
     const validation = validateExercise(submission, exercise.solution);
 
     if (validation.success) {
-      // Update Progress
-      // Find valid lesson ID first
-      const lesson = await prisma.lesson.findUnique({ where: { id: exercise.lessonId } });
+      // Find Lesson
+      const lesson = await lessonsV.findOne({ _id: new ObjectId(exercise.lessonId) });
       
-      // Update Progress using manual check to avoid transaction/upsert on standalone mongo
-      // lesson already defined above
-      
-      const existingProgress = await prisma.userProgress.findFirst({
-        where: {
-          userId: userId,
-          lessonId: lesson.id
-        }
-      });
+      // Update Progress (Upsert)
+      const uId = new ObjectId(userId);
+      const lId = lesson._id;
 
-      if (existingProgress) {
-        await prisma.userProgress.update({
-          where: { id: existingProgress.id },
-          data: { status: 'COMPLETED', completedAt: new Date() }
-        });
-      } else {
-        await prisma.userProgress.create({
-          data: {
-            userId,
-            lessonId: lesson.id,
-            status: 'COMPLETED',
-            completedAt: new Date()
-          }
-        });
-      }
+      await progressV.updateOne(
+        { userId: uId, lessonId: lId },
+        { 
+          $set: { status: 'COMPLETED', completedAt: new Date() }
+        },
+        { upsert: true }
+      );
       
-      // Award XP (Mock)
-      const updatedUser = await prisma.user.update({
-        where: { id: userId },
-        data: { xp: { increment: 10 } }
-      });
+      // Award XP
+      await usersV.updateOne(
+        { _id: uId },
+        { $inc: { xp: 10 } }
+      );
       
       // Badge Check (Simple XP threshold)
+      const user = await usersV.findOne({ _id: uId });
       let newBadge = null;
-      if (updatedUser.xp >= 10) {
+
+      if (user.xp >= 10) {
          // Check if they already have "Spark Novice"
-         const badge = await prisma.badge.findFirst({ where: { condition: 'xp_10' } });
+         const badge = await badgesV.findOne({ condition: 'xp_10' });
          if (badge) {
-             const hasBadge = await prisma.userBadge.findFirst({
-                 where: { userId, badgeId: badge.id }
+             const hasBadge = await userBadgesV.findOne({
+                 userId: uId, badgeId: badge._id
              });
 
              if (!hasBadge) {
-                 await prisma.userBadge.create({
-                     data: { userId, badgeId: badge.id }
+                 await userBadgesV.insertOne({
+                     userId: uId, badgeId: badge._id, awardedAt: new Date()
                  });
                  newBadge = badge;
              }
          }
       }
+
+      return res.json({ 
+        success: validation.success, 
+        message: validation.message,
+        xpEarned: 10,
+        newBadge: newBadge
+      });
     }
 
     res.json({ 
       success: validation.success, 
       message: validation.message,
-      message: validation.message,
-      xpEarned: validation.success ? 10 : 0,
-      newBadge: newBadge
+      xpEarned: 0,
+      newBadge: null
     });
 
   } catch (error) {

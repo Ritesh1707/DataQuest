@@ -16,7 +16,14 @@ async function fetchWithAuth(endpoint, options = {}) {
     headers,
   });
 
-  const data = await response.json();
+  let data;
+  const contentType = response.headers.get("content-type");
+  if (contentType && contentType.indexOf("application/json") !== -1) {
+    data = await response.json();
+  } else {
+    data = { message: await response.text() };
+  }
+
   if (!response.ok) {
     throw new Error(data.message || 'API Error');
   }
@@ -39,4 +46,5 @@ export const api = {
     body: JSON.stringify({ exerciseId, code }),
   }),
   getLeaderboard: () => fetchWithAuth('/gamification/leaderboard'),
+  getUserRank: () => fetchWithAuth('/gamification/my-rank'),
 };
