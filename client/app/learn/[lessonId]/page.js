@@ -5,7 +5,7 @@ import Navbar from '@/components/Navbar';
 import { api } from '@/lib/api';
 import Editor from '@monaco-editor/react';
 import ReactMarkdown from 'react-markdown';
-import { Play, CheckCircle, AlertCircle, ChevronLeft, Code, Trophy, terminal, RotateCcw, X } from 'lucide-react';
+import { Play, CheckCircle, AlertCircle, ChevronLeft, Code, Trophy, terminal, RotateCcw, X, Zap } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import Link from 'next/link';
 

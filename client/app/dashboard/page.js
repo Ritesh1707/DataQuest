@@ -25,8 +25,12 @@ export default function Dashboard() {
     
     async function load() {
       try {
-        const data = await api.getCourses();
-        setCourses(data);
+        const [coursesData, userData] = await Promise.all([
+          api.getCourses(),
+          api.getMe()
+        ]);
+        setCourses(coursesData);
+        setUser(userData);
       } catch (e) {
         console.error(e);
         if (e.message.includes('401') || e.message.includes('403')) {

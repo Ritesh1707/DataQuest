@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
-import { Sparkles, Trophy, LogOut, LayoutDashboard, Database } from 'lucide-react';
+import { Sparkles, Trophy, LogOut, LayoutDashboard, Database, Award } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { api } from '@/lib/api';
 
@@ -72,6 +72,15 @@ export default function Navbar() {
               >
                 <LayoutDashboard className="w-4 h-4" />
                 <span>Dashboard</span>
+              </Link>
+
+              <Link href="/achievements" 
+                className={`flex items-center space-x-2 text-sm font-medium transition-colors ${
+                  pathname === '/achievements' ? 'text-[#FF3621]' : 'text-slate-400 hover:text-white'
+                }`}
+              >
+                <Award className="w-4 h-4" />
+                <span>Achievements</span>
               </Link>
               
               <div className="h-6 w-px bg-white/10" />

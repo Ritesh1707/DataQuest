@@ -39,4 +39,27 @@ const getLeaderboard = async (req, res) => {
   }
 };
 
-module.exports = { getLeaderboard, getUserRank };
+const getAchievements = async (req, res) => {
+  const userId = req.user.id;
+  try {
+    const [allBadges, userBadges] = await Promise.all([
+      prisma.badge.findMany(),
+      prisma.userBadge.findMany({ where: { userId } })
+    ]);
+
+    const unlockedBadgeIds = new Set(userBadges.map(ub => ub.badgeId));
+
+    const achievements = allBadges.map(badge => ({
+      ...badge,
+      unlocked: unlockedBadgeIds.has(badge.id),
+      unlockedAt: userBadges.find(ub => ub.badgeId === badge.id)?.awardedAt || null
+    }));
+
+    res.json(achievements);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Error fetching achievements' });
+  }
+};
+
+module.exports = { getLeaderboard, getUserRank, getAchievements };

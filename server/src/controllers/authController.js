@@ -95,7 +95,35 @@ const login = async (req, res) => {
   }
 };
 
+const getMe = async (req, res) => {
+  try {
+    const { userId } = req.user;
+    const db = await getDb();
+    const users = db.collection('User');
+    
+    // Convert userId string to ObjectId
+    const { ObjectId } = require('mongodb');
+    const _id = new ObjectId(userId);
+
+    const user = await users.findOne({ _id });
+    if (!user) return res.status(404).json({ message: 'User not found' });
+
+    res.json({
+        id: user._id,
+        email: user.email,
+        name: user.name,
+        level: user.level || 1,
+        xp: user.xp || 0,
+        role: user.role
+    });
+  } catch (error) {
+    console.error('GetMe Error:', error);
+    res.status(500).json({ message: 'Internal Server Error' });
+  }
+};
+
 module.exports = {
   register,
   login,
+  getMe,
 };

@@ -86,25 +86,32 @@ const submitExercise = async (req, res) => {
         { $inc: { xp: 10 } }
       );
       
-      // Badge Check (Simple XP threshold)
-      const user = await usersV.findOne({ _id: uId });
+      // Badge Check
+      const completedCount = await progressV.countDocuments({ userId: uId, status: 'COMPLETED' });
       let newBadge = null;
 
-      if (user.xp >= 10) {
-         // Check if they already have "Spark Novice"
-         const badge = await badgesV.findOne({ condition: 'xp_10' });
-         if (badge) {
-             const hasBadge = await userBadgesV.findOne({
-                 userId: uId, badgeId: badge._id
-             });
+      // Badges to check
+      const checks = [
+        { condition: 'first_lesson', threshold: 1 },
+        { condition: '5_exercises', threshold: 5 } // Using lessons as proxy for exercises
+      ];
 
-             if (!hasBadge) {
-                 await userBadgesV.insertOne({
-                     userId: uId, badgeId: badge._id, awardedAt: new Date()
+      for (const check of checks) {
+        if (completedCount >= check.threshold) {
+             const badge = await badgesV.findOne({ condition: check.condition });
+             if (badge) {
+                 const hasBadge = await userBadgesV.findOne({
+                     userId: uId, badgeId: badge._id
                  });
-                 newBadge = badge;
+    
+                 if (!hasBadge) {
+                     await userBadgesV.insertOne({
+                         userId: uId, badgeId: badge._id, awardedAt: new Date()
+                     });
+                     newBadge = badge; // Return the most recent one (or array if multiple)
+                 }
              }
-         }
+        }
       }
 
       return res.json({ 

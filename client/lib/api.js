@@ -47,4 +47,6 @@ export const api = {
   }),
   getLeaderboard: () => fetchWithAuth('/gamification/leaderboard'),
   getUserRank: () => fetchWithAuth('/gamification/my-rank'),
+  getAchievements: () => fetchWithAuth('/gamification/achievements'),
+  getMe: () => fetchWithAuth('/auth/me'),
 };
