@@ -53,7 +53,7 @@ Follow these instructions to set up the project locally for development.
 
 1.  **Clone the Repository**
     ```bash
-    git clone https://github.com/your-username/dataquest.git
+    git clone https://github.com/Ritesh1707/DataQuest.git
     cd dataquest
     ```
 
@@ -65,7 +65,6 @@ Follow these instructions to set up the project locally for development.
     npm install
     
     # Configure Environment
-    # Create a .env file based on .env.example (or use defaults)
     
     # Seed the Database (Important for initial content!)
     node src/utils/seed_runner.js
