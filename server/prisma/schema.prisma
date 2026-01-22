@@ -20,6 +20,7 @@ model User {
 
   progress  UserProgress[]
   badges    UserBadge[]
+  quizResults UserQuizResult[]
 }
 
 enum Role {
@@ -34,6 +35,7 @@ model Course {
   slug        String   @unique
   modules     Module[]
   createdAt   DateTime @default(now())
+  difficulty  Difficulty @default(BEGINNER)
 }
 
 model Module {
@@ -44,6 +46,7 @@ model Module {
   courseId    String   @db.ObjectId
   course      Course   @relation(fields: [courseId], references: [id])
   lessons     Lesson[]
+  quizzes     Quiz[]
 }
 
 model Lesson {
@@ -100,5 +103,46 @@ model UserBadge {
   user      User     @relation(fields: [userId], references: [id])
   badgeId   String   @db.ObjectId
   badge     Badge    @relation(fields: [badgeId], references: [id])
+
   awardedAt DateTime @default(now())
+}
+
+enum Difficulty {
+  BEGINNER
+  INTERMEDIATE
+  ADVANCED
+}
+
+model Quiz {
+  id          String     @id @default(auto()) @map("_id") @db.ObjectId
+  title       String
+  description String?
+  difficulty  Difficulty @default(BEGINNER)
+  moduleId    String?    @db.ObjectId
+  module      Module?    @relation(fields: [moduleId], references: [id])
+  questions   Question[]
+  results     UserQuizResult[]
+  createdAt   DateTime   @default(now())
+}
+
+model Question {
+  id            String   @id @default(auto()) @map("_id") @db.ObjectId
+  quizId        String   @db.ObjectId
+  quiz          Quiz     @relation(fields: [quizId], references: [id])
+  text          String
+  options       String[]
+  correctAnswer String
+  explanation   String?
+  points        Int      @default(10)
+}
+
+model UserQuizResult {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  userId    String   @db.ObjectId
+  user      User     @relation(fields: [userId], references: [id])
+  quizId    String   @db.ObjectId
+  quiz      Quiz     @relation(fields: [quizId], references: [id])
+  score     Int
+  maxScore  Int
+  completedAt DateTime @default(now())
 }

@@ -48,5 +48,11 @@ export const api = {
   getLeaderboard: () => fetchWithAuth('/gamification/leaderboard'),
   getUserRank: () => fetchWithAuth('/gamification/my-rank'),
   getAchievements: () => fetchWithAuth('/gamification/achievements'),
+  getStats: () => fetchWithAuth('/gamification/stats'),
+  getQuiz: (id) => fetchWithAuth(`/quizzes/${id}`),
+  submitQuiz: (id, answers) => fetchWithAuth(`/quizzes/${id}/submit`, {
+    method: 'POST',
+    body: JSON.stringify({ answers }),
+  }),
   getMe: () => fetchWithAuth('/auth/me'),
 };

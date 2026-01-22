@@ -22,5 +22,6 @@ const gamificationRoutes = require('./routes/gamification');
 app.use('/api/auth', authRoutes);
 app.use('/api/content', contentRoutes);
 app.use('/api/gamification', gamificationRoutes);
+app.use('/api/quizzes', require('./routes/quiz'));
 
 module.exports = app;

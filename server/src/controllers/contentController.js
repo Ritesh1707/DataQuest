@@ -9,7 +9,10 @@ const getCourses = async (req, res) => {
       include: { 
         modules: {
           include: {
-            lessons: true
+            lessons: true,
+            quizzes: {
+              select: { id: true, title: true, difficulty: true }
+            }
           }
         } 
       },

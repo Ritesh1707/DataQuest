@@ -62,4 +62,65 @@ const getAchievements = async (req, res) => {
   }
 };
 
-module.exports = { getLeaderboard, getUserRank, getAchievements };
+
+const getStats = async (req, res) => {
+  const userId = req.user.id;
+  try {
+    const completedProgress = await prisma.userProgress.findMany({
+      where: { 
+        userId, 
+        status: 'COMPLETED',
+        completedAt: { not: null }
+      },
+      include: {
+        lesson: {
+          include: {
+            module: {
+              include: {
+                course: true
+              }
+            }
+          }
+        }
+      }
+    });
+
+    // 1. Activity Heatmap (Last 365 days)
+    const heatmapData = {};
+    completedProgress.forEach(p => {
+      const date = p.completedAt.toISOString().split('T')[0];
+      heatmapData[date] = (heatmapData[date] || 0) + 1;
+    });
+
+    const activityHeatmap = Object.entries(heatmapData).map(([date, count]) => ({ date, count }));
+
+    // 2. Skill Radar (Based on Course Titles for now)
+    const skillCounts = {};
+    completedProgress.forEach(p => {
+      // Use course title or fallback to "General"
+      const skill = p.lesson?.module?.course?.title || 'General';
+      skillCounts[skill] = (skillCounts[skill] || 0) + 10; // Assume 10 points per lesson
+    });
+
+    // Normalize slightly for radar chart (max 100 or just raw values)
+    const skillRadar = Object.entries(skillCounts).map(([subject, A]) => ({ subject, A, fullMark: 100 }));
+    
+    // Ensure we have at least some data for the radar
+    if (skillRadar.length === 0) {
+        skillRadar.push({ subject: 'Coding', A: 0, fullMark: 100 });
+        skillRadar.push({ subject: 'Data', A: 0, fullMark: 100 });
+        skillRadar.push({ subject: 'AI', A: 0, fullMark: 100 });
+    }
+
+    res.json({
+      heatmap: activityHeatmap,
+      radar: skillRadar
+    });
+
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Error fetching stats' });
+  }
+};
+
+module.exports = { getLeaderboard, getUserRank, getAchievements, getStats };
