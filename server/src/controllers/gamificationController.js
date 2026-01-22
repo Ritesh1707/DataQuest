@@ -112,9 +112,31 @@ const getStats = async (req, res) => {
         skillRadar.push({ subject: 'AI', A: 0, fullMark: 100 });
     }
 
+    // 3. Determine Dynamic Identity (Theme)
+    let topSkill = 'Novice';
+    let themeColor = 'slate'; 
+    let maxSkillVal = 0;
+
+    skillRadar.forEach(s => {
+      if (s.A > maxSkillVal) {
+        maxSkillVal = s.A;
+        topSkill = s.subject;
+      }
+    });
+
+    if (topSkill.toLowerCase().includes('data')) themeColor = 'orange'; // Engineering
+    else if (topSkill.toLowerCase().includes('architect')) themeColor = 'blue';  // Architecture
+    else if (topSkill.toLowerCase().includes('ml') || topSkill.toLowerCase().includes('ai')) themeColor = 'purple'; // AI/ML
+    else if (topSkill.toLowerCase().includes('coding')) themeColor = 'green';
+    else themeColor = 'red'; // Default "Brick" style
+
     res.json({
       heatmap: activityHeatmap,
-      radar: skillRadar
+      radar: skillRadar,
+      identity: {
+        topSkill,
+        themeColor
+      }
     });
 
   } catch (error) {

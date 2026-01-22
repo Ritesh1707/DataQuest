@@ -55,4 +55,8 @@ export const api = {
     body: JSON.stringify({ answers }),
   }),
   getMe: () => fetchWithAuth('/auth/me'),
+  analyzeCode: (code, exercisePrompt, language) => fetchWithAuth('/ai/analyze-code', {
+    method: 'POST',
+    body: JSON.stringify({ code, exercisePrompt, language }),
+  }),
 };

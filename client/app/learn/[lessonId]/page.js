@@ -5,7 +5,7 @@ import Navbar from '@/components/Navbar';
 import { api } from '@/lib/api';
 import Editor from '@monaco-editor/react';
 import ReactMarkdown from 'react-markdown';
-import { Play, CheckCircle, AlertCircle, ChevronLeft, Code, Trophy, terminal, RotateCcw, X, Zap } from 'lucide-react';
+import { Play, CheckCircle, AlertCircle, ChevronLeft, Code, Trophy, terminal, RotateCcw, X, Zap, Sparkles } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import Link from 'next/link';
 
@@ -18,6 +18,8 @@ export default function LessonPage() {
   const [output, setOutput] = useState(null); 
   const [submitting, setSubmitting] = useState(false);
   const [isConsoleOpen, setIsConsoleOpen] = useState(true);
+  const [analyzing, setAnalyzing] = useState(false);
+  const [aiFeedback, setAiFeedback] = useState(null);
 
   useEffect(() => {
     async function load() {
@@ -61,6 +63,19 @@ export default function LessonPage() {
       setOutput({ success: false, message: e.message || 'Execution Error' });
     } finally {
       setSubmitting(false);
+    }
+  };
+
+  const analyzeCode = async () => {
+    if (!code) return;
+    setAnalyzing(true);
+    try {
+      const data = await api.analyzeCode(code, lesson.exercises[0].prompt);
+      setAiFeedback(data.feedback);
+    } catch (e) {
+      setAiFeedback("Error analyzing code. Please try again.");
+    } finally {
+      setAnalyzing(false);
     }
   };
 
@@ -116,6 +131,31 @@ export default function LessonPage() {
                  >
                    Continue Learning
                  </button>
+             </div>
+          </div>
+        </div>
+      )}
+
+      {/* AI Feedback Overlay */}
+      {aiFeedback && (
+        <div className="fixed inset-0 z-[100] bg-black/80 backdrop-blur-sm flex items-center justify-center animate-fade-in" onClick={() => setAiFeedback(null)}>
+          <div className="bg-[#141414] w-full max-w-2xl mx-4 rounded-xl border border-purple-500/20 shadow-2xl overflow-hidden flex flex-col max-h-[80vh]" onClick={e => e.stopPropagation()}>
+             <div className="p-4 border-b border-white/5 bg-purple-900/10 flex items-center justify-between">
+                <div className="flex items-center space-x-2 text-purple-400 font-bold">
+                   <Sparkles className="w-5 h-5" />
+                   <span>CodeSensei Feedback</span>
+                </div>
+                <button onClick={() => setAiFeedback(null)} className="text-slate-400 hover:text-white">
+                   <X className="w-5 h-5" />
+                </button>
+             </div>
+             <div className="p-6 overflow-y-auto custom-scrollbar prose prose-invert max-w-none">
+                <ReactMarkdown>{aiFeedback}</ReactMarkdown>
+             </div>
+             <div className="p-4 border-t border-white/5 bg-[#0A0E12] flex justify-end">
+                <button onClick={() => setAiFeedback(null)} className="px-4 py-2 bg-white/10 hover:bg-white/20 rounded-lg text-sm font-bold transition-colors">
+                   Close
+                </button>
              </div>
           </div>
         </div>

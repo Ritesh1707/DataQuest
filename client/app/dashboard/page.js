@@ -1,20 +1,16 @@
 'use client';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import ActivityHeatmap from '@/components/analytics/ActivityHeatmap';
-import SkillRadar from '@/components/analytics/SkillRadar';
-import ProgressConstellation from '@/components/analytics/ProgressConstellation';
 import Navbar from '@/components/Navbar';
 import { api } from '@/lib/api';
 import Link from 'next/link';
-import { PlayCircle, Award, Zap, BookOpen, Lock, Layout, Star } from 'lucide-react';
+import { PlayCircle, Award, BookOpen, Layout, Star } from 'lucide-react';
 
 export default function Dashboard() {
   const router = useRouter();
   const [courses, setCourses] = useState([]);
   const [loading, setLoading] = useState(true);
   const [user, setUser] = useState({ name: 'User', xp: 0, level: 1 });
-  const [stats, setStats] = useState(null);
   const [difficultyFilter, setDifficultyFilter] = useState('ALL');
 
   const filteredCourses = courses.filter(c => {
@@ -31,14 +27,12 @@ export default function Dashboard() {
     
     async function load() {
       try {
-        const [coursesData, userData, statsData] = await Promise.all([
+        const [coursesData, userData] = await Promise.all([
           api.getCourses(),
-          api.getMe(),
-          api.getStats()
+          api.getMe()
         ]);
         setCourses(coursesData);
         setUser(userData);
-        setStats(statsData);
       } catch (e) {
         console.error(e);
         if (e.message.includes('401') || e.message.includes('403')) {
@@ -57,30 +51,18 @@ export default function Dashboard() {
       
       <div className="pt-28 pb-12 px-6 max-w-7xl mx-auto">
         
-        {/* User Stats Hero */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-6 animate-fade-in">
+        {/* Quick Actions / Daily Quest */}
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12 animate-fade-in">
           <div className="md:col-span-3 p-8 rounded-3xl bg-gradient-to-r from-slate-900 to-slate-800 border border-slate-700 relative overflow-hidden group">
             <div className="absolute top-0 right-0 w-64 h-64 bg-brick/10 rounded-full blur-3xl transform translate-x-12 -translate-y-12" />
             
             <div className="relative z-10">
               <h1 className="text-3xl font-semibold mb-2 text-white">Welcome back, Architect!</h1>
-              <p className="text-slate-400 mb-6 font-light">You're on a 3-day streak. Keep pushing to unlock the 'Lakehouse Legend' badge.</p>
+              <p className="text-slate-400 mb-6 font-light">Ready to continue your journey? You have 2 modules pending.</p>
               
-              <div className="flex items-center space-x-8">
-                <div>
-                   <div className="text-xs text-slate-500 uppercase tracking-widest font-medium mb-1">Current Level</div>
-                   <div className="text-4xl font-light text-white flex items-center tracking-tight">
-                      {user.level} <span className="text-sm font-medium text-brick ml-2 tracking-normal">Novice</span>
-                   </div>
-                </div>
-                <div>
-                   <div className="text-xs text-slate-500 uppercase tracking-widest font-medium mb-1">Total XP</div>
-                   <div className="text-4xl font-light text-white flex items-center tracking-tight">
-                      <Zap className="w-6 h-6 text-yellow-500 mr-2" fill="currentColor" />
-                      {user.xp}
-                   </div>
-                </div>
-              </div>
+              <Link href="/profile" className="inline-flex items-center px-5 py-2 rounded-full bg-white/10 hover:bg-white/20 border border-white/5 transition-all text-sm font-medium">
+                  View Mission Control <Layout className="w-4 h-4 ml-2" />
+              </Link>
             </div>
           </div>
 
@@ -97,21 +79,6 @@ export default function Dashboard() {
              </div>
           </div>
         </div>
-
-        {/* Analytics Section */}
-        {stats && (
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-12 animate-slide-up" style={{ animationDelay: '0.1s' }}>
-            <div className="lg:col-span-1">
-              <ActivityHeatmap data={stats.heatmap} />
-            </div>
-            <div className="lg:col-span-1">
-               <ProgressConstellation />
-            </div>
-            <div className="lg:col-span-1 h-full">
-              <SkillRadar data={stats.radar} />
-            </div>
-          </div>
-        )}
 
         {/* Courses Header & Filters */}
         <div className="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-4 animate-slide-up" style={{ animationDelay: '0.2s' }}>

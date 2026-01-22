@@ -17,11 +17,13 @@ app.get('/', (req, res) => {
 const authRoutes = require('./routes/auth');
 const contentRoutes = require('./routes/content');
 const gamificationRoutes = require('./routes/gamification');
+const aiRoutes = require('./routes/ai');
 
 // Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/content', contentRoutes);
 app.use('/api/gamification', gamificationRoutes);
+app.use('/api/ai', aiRoutes);
 app.use('/api/quizzes', require('./routes/quiz'));
 
 module.exports = app;
