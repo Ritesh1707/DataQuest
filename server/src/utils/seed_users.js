@@ -11,24 +11,27 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-function generateRandomUser(i) {
-  const firstName = firstNames[getRandomInt(0, firstNames.length - 1)];
-  const lastName = lastNames[getRandomInt(0, lastNames.length - 1)];
-  const name = `${firstName} ${lastName}`;
-  const xp = getRandomInt(100, 15000);
-  const level = Math.floor(xp / 1000) + 1;
-  
-  return {
-    email: `player${i}@test.com`,
-    password: 'hashed_password_placeholder', // We won't log in as them usually
-    name: name,
-    role: 'STUDENT',
-    xp: xp,
-    level: level,
-    createdAt: new Date(),
-    updatedAt: new Date()
-  };
-}
+// Hash password once to speed up seeding
+  const hashedPassword = bcrypt.hashSync('password123', 10);
+
+  function generateRandomUser(i) {
+    const firstName = firstNames[getRandomInt(0, firstNames.length - 1)];
+    const lastName = lastNames[getRandomInt(0, lastNames.length - 1)];
+    const name = `${firstName} ${lastName}`;
+    const xp = getRandomInt(100, 15000);
+    const level = Math.floor(xp / 1000) + 1;
+    
+    return {
+      email: `player${i}@test.com`,
+      password: hashedPassword, 
+      name: name,
+      role: 'STUDENT',
+      xp: xp,
+      level: level,
+      createdAt: new Date(),
+      updatedAt: new Date()
+    };
+  }
 
 async function main() {
   const client = new MongoClient(url);

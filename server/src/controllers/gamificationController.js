@@ -94,45 +94,85 @@ const getStats = async (req, res) => {
 
     const activityHeatmap = Object.entries(heatmapData).map(([date, count]) => ({ date, count }));
 
-    // 2. Skill Radar (Based on Course Titles for now)
-    const skillCounts = {};
+    // 2. Tag-based Skill Aggregation
+    const tagCounts = {};
+    const ALL_LANGUAGES = ['Python', 'SQL', 'Scala', 'R', 'Java'];
+    
+    // Default zero values for key languages to ensure they appear on the chart
+    ALL_LANGUAGES.forEach(lang => tagCounts[lang] = 0);
+
     completedProgress.forEach(p => {
-      // Use course title or fallback to "General"
-      const skill = p.lesson?.module?.course?.title || 'General';
-      skillCounts[skill] = (skillCounts[skill] || 0) + 10; // Assume 10 points per lesson
+      const course = p.lesson?.module?.course;
+      const tags = course?.tags || [];
+      
+      if (tags.length > 0) {
+        tags.forEach(tag => {
+           tagCounts[tag] = (tagCounts[tag] || 0) + 10;
+        });
+      } else {
+        // Fallback for untagged content
+        const title = course?.title || 'General';
+        tagCounts[title] = (tagCounts[title] || 0) + 10;
+      }
     });
 
-    // Normalize slightly for radar chart (max 100 or just raw values)
-    const skillRadar = Object.entries(skillCounts).map(([subject, A]) => ({ subject, A, fullMark: 100 }));
-    
-    // Ensure we have at least some data for the radar
-    if (skillRadar.length === 0) {
-        skillRadar.push({ subject: 'Coding', A: 0, fullMark: 100 });
-        skillRadar.push({ subject: 'Data', A: 0, fullMark: 100 });
-        skillRadar.push({ subject: 'AI', A: 0, fullMark: 100 });
-    }
+    // Split into Languages and Technologies
+    const languages = [];
+    const technologies = [];
+
+    Object.entries(tagCounts).forEach(([name, score]) => {
+      const entry = { name, score, fullMark: 100 }; // Normalize if needed later
+      if (ALL_LANGUAGES.includes(name)) {
+        languages.push(entry);
+      } else {
+        // Filter out course titles that might have slipped in if we want strict "Technologies"
+        // For now, include everything else as a technology/skill
+        if (score > 0) technologies.push(entry);
+      }
+    });
+
+    // Sort by score desc
+    languages.sort((a,b) => b.score - a.score);
+    technologies.sort((a,b) => b.score - a.score);
 
     // 3. Determine Dynamic Identity (Theme)
     let topSkill = 'Novice';
     let themeColor = 'slate'; 
     let maxSkillVal = 0;
 
-    skillRadar.forEach(s => {
-      if (s.A > maxSkillVal) {
-        maxSkillVal = s.A;
-        topSkill = s.subject;
+    // Check all tags for top skill
+    Object.entries(tagCounts).forEach(([skill, val]) => {
+      if (val > maxSkillVal) {
+        maxSkillVal = val;
+        topSkill = skill;
       }
     });
 
-    if (topSkill.toLowerCase().includes('data')) themeColor = 'orange'; // Engineering
-    else if (topSkill.toLowerCase().includes('architect')) themeColor = 'blue';  // Architecture
-    else if (topSkill.toLowerCase().includes('ml') || topSkill.toLowerCase().includes('ai')) themeColor = 'purple'; // AI/ML
-    else if (topSkill.toLowerCase().includes('coding')) themeColor = 'green';
-    else themeColor = 'red'; // Default "Brick" style
+    if (maxSkillVal === 0) topSkill = 'Novice';
+
+    // Theme Logic
+    const ts = topSkill.toLowerCase();
+    if (ts.includes('data') || ts.includes('sql')) themeColor = 'orange'; 
+    else if (ts.includes('architect')) themeColor = 'blue';
+    else if (ts.includes('ml') || ts.includes('ai') || ts.includes('python')) themeColor = 'purple';
+    else if (ts.includes('coding') || ts.includes('spark')) themeColor = 'green';
+    else themeColor = 'red'; 
+
+    // Radar Data (Use Top 6 Tech/Skills)
+    const skillRadar = technologies.slice(0, 6).map(t => ({ subject: t.name, A: t.score, fullMark: 100 }));
+    if (skillRadar.length < 3) {
+       ['Architecture', 'Data Engineering', 'ML'].forEach(d => {
+          if (!skillRadar.find(r => r.subject === d)) skillRadar.push({ subject: d, A: 0, fullMark: 100 });
+       });
+    }
 
     res.json({
       heatmap: activityHeatmap,
       radar: skillRadar,
+      techStack: {
+        languages,
+        technologies
+      },
       identity: {
         topSkill,
         themeColor
@@ -140,8 +180,8 @@ const getStats = async (req, res) => {
     });
 
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: 'Error fetching stats' });
+    console.error('Gamification Stats Error:', error);
+    res.status(500).json({ message: 'Error fetching stats', error: error.message });
   }
 };
 

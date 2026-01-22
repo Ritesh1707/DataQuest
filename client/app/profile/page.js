@@ -6,8 +6,9 @@ import SkillRadar from '@/components/analytics/SkillRadar';
 import ProgressConstellation from '@/components/analytics/ProgressConstellation';
 import XPProgressRing from '@/components/analytics/XPProgressRing';
 import RecentActivity from '@/components/analytics/RecentActivity';
+import TechStack from '@/components/analytics/TechStack';
 import { api } from '@/lib/api';
-import { User, Shield, Zap, Award } from 'lucide-react';
+import { User, Shield, Zap, Award, Trophy } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 
 export default function ProfilePage() {
@@ -34,8 +35,10 @@ export default function ProfilePage() {
           setStats(s);
           setCourses(c);
        } catch (e) {
-          console.error(e);
-          router.push('/login');
+          console.error('Profile Load Error', e);
+          if (e.message && (e.message.includes('401') || e.message.includes('403'))) {
+             router.push('/login');
+          }
        } finally {
           setLoading(false);
        }
@@ -115,6 +118,10 @@ export default function ProfilePage() {
             {/* Heatmap takes 2 cols */}
             <div className="lg:col-span-2 space-y-6">
                <ActivityHeatmap data={stats?.heatmap} />
+               <TechStack 
+                  languages={stats?.techStack?.languages} 
+                  technologies={stats?.techStack?.technologies} 
+               />
                <ProgressConstellation courses={courses} />
             </div>
 
@@ -131,6 +138,32 @@ export default function ProfilePage() {
                </div>
 
                <SkillRadar data={stats?.radar} />
+               
+               <div className="p-6 glass-panel rounded-2xl">
+                  <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
+                     <Trophy className="w-5 h-5 text-yellow-500" /> Mastery Levels
+                  </h3>
+                  <div className="space-y-4">
+                     {['BEGINNER', 'INTERMEDIATE', 'ADVANCED'].map(level => {
+                         const count = courses.filter(c => c.difficulty === level).length;
+                         const color = level === 'BEGINNER' ? 'bg-green-500' : level === 'INTERMEDIATE' ? 'bg-yellow-500' : 'bg-red-500';
+                         // Mock progress for now to show visual differentiation
+                         const percentage = level === 'BEGINNER' ? 75 : level === 'INTERMEDIATE' ? 30 : 5;
+                         
+                         return (
+                            <div key={level}>
+                               <div className="flex justify-between text-xs uppercase tracking-widest text-slate-400 mb-1">
+                                  <span>{level}</span>
+                                  <span>{count} Courses</span>
+                               </div>
+                               <div className="h-2 bg-slate-800 rounded-full overflow-hidden border border-white/5">
+                                  <div className={`h-full ${color}`} style={{ width: `${percentage}%` }} />
+                               </div>
+                            </div>
+                         )
+                     })}
+                  </div>
+               </div>
                
                <RecentActivity activities={[
                    { type: 'quiz', title: 'Lakehouse Architecture Quiz', date: '2 hours ago' },

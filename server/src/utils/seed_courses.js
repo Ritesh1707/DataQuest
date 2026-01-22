@@ -30,9 +30,11 @@ async function main() {
     // ==========================================
     // HELPER FUNCTIONS
     // ==========================================
-    const createCourse = async (title, slug, desc) => {
+    // HELPER FUNCTIONS
+    // ==========================================
+    const createCourse = async (title, slug, desc, tags = [], difficulty = 'BEGINNER') => {
       const res = await courses.insertOne({
-        title, slug, description: desc, createdAt: new Date(), updatedAt: new Date()
+        title, slug, description: desc, tags, difficulty, createdAt: new Date(), updatedAt: new Date()
       });
       return res.insertedId;
     };
@@ -60,7 +62,9 @@ async function main() {
     const c1 = await createCourse(
       'Databricks Solution Architect Masterclass', 
       'databricks-sa-masterclass',
-      'The complete guide to designing, securing, and optimizing production-grade Lakehouse solutions.'
+      'The complete guide to designing, securing, and optimizing production-grade Lakehouse solutions.',
+      ['Architecture', 'SQL', 'Delta Lake', 'Unity Catalog'],
+      'ADVANCED'
     );
 
     const m1_1 = await createModule(c1, 'The Lakehouse Paradigm', 'Medallion Architecture & Data Quality', 1);
@@ -152,7 +156,9 @@ GRANT CREATE TABLE ON SCHEMA proj_alpha TO engineering_team;
     const c2 = await createCourse(
       'Databricks Data Engineer Associate',
       'data-engineer-associate',
-      'Start your journey here. Master the fundamentals of ELT, Delta Lake, and Spark SQL.'
+      'Start your journey here. Master the fundamentals of ELT, Delta Lake, and Spark SQL.',
+      ['Data Engineering', 'PySpark', 'SQL', 'Python'],
+      'BEGINNER'
     );
 
     const m2_1 = await createModule(c2, 'Databricks Workspace Foundations', 'Notebooks, compute, and repos.', 1);
@@ -247,7 +253,9 @@ AS SELECT * FROM live.raw_orders
     const c3 = await createCourse(
       'Databricks Machine Learning Professional',
       'ml-professional',
-      'End-to-end MLOps: Feature Stores, AutoML, MLflow, and Model Serving.'
+      'End-to-end MLOps: Feature Stores, AutoML, MLflow, and Model Serving.',
+      ['Machine Learning', 'Python', 'MLOps', 'Feature Store'],
+      'INTERMEDIATE'
     );
 
     const m3_1 = await createModule(c3, 'Experiment Tracking', 'Managing experiments with MLflow.', 1);
@@ -303,7 +311,65 @@ fs.create_table(
 \`\`\`
     `, 1, 'Task: Create a feature table with keys.', 'fs.create_table(...)', 'primary_keys');
 
-    console.log('=== SEEDING COMPLETE: 3 Courses Created ===');
+    // ==========================================
+    // COURSE 4: SPARK OPTIMIZATION (INTERMEDIATE)
+    // ==========================================
+    console.log('Seeding Course 4: Spark Optimization...');
+    const c4 = await createCourse(
+      'Deep Dive: Spark Performance Tuning',
+      'spark-optimization',
+      'Master the art of tuning Spark applications. Learn about shuffles, skew, spills, and AQE.',
+      ['Spark', 'PySpark', 'Data Engineering', 'Scala'],
+      'INTERMEDIATE'
+    );
+
+    const m4_1 = await createModule(c4, 'Understanding the Catalyst Optimizer', 'How Spark executes your code.', 1);
+    await createLesson(m4_1, 'Plans and Optimization', `
+# Catalyst Optimizer
+Spark SQL uses the Catalyst Optimizer to optimize all queries written in Spark SQL and the DataFrame API.
+
+## The Phases
+1. **Analysis**: Resolving references.
+2. **Logical Optimization**: Rule-based optimizations (predicate pushdown).
+3. **Physical Planning**: Cost-based optimization (join strategies).
+4. **Code Generation**: Tungsten engine generates Java bytecode.
+    `, 1, 'Task: Explain the role of Code Generation.', '// Tungsten...', 'bytecode');
+
+    const m4_2 = await createModule(c4, 'Handling Data Skew', 'Strategies for skewed joins.', 2);
+    await createLesson(m4_2, 'Salting and AQE', `
+# Data Skew
+Skew occurs when one partition has significantly more data than others, causing long-tail tasks.
+
+## Solutions
+1. **AQE (Adaptive Query Execution)**: Automatically splits large skewed partitions.
+2. **Salting**: Adding a random key to redistribute data evenly during a join.
+    `, 1, 'Task: Enable AQE.', 'spark.conf.set("spark.sql.adaptive.enabled", ...)', 'true');
+
+    // ==========================================
+    // COURSE 5: GENERATIVE AI (ADVANCED)
+    // ==========================================
+    console.log('Seeding Course 5: GenAI Engineering...');
+    const c5 = await createCourse(
+      'Generative AI Engineer',
+      'genai-engineer',
+      'Build production RAG applications with Vector Search, LangChain, and MosaicML.',
+      ['Machine Learning', 'Python', 'AI', 'Architecture'],
+      'ADVANCED'
+    );
+
+    const m5_1 = await createModule(c5, 'RAG Foundations', 'Retrieval Augmented Generation', 1);
+    await createLesson(m5_1, 'Vector Search Concepts', `
+# Vector Search
+To enable LLMs to answer questions about *your* private data, you need RAG.
+
+## Embeddings
+Convert text into high-dimensional vectors. Similar meanings are close in space.
+
+## Vector Database
+Databricks Vector Search is a serverless vector database integrated with Unity Catalog. 
+    `, 1, 'Task: Select an embedding model.', 'const model = "bge-large-en"', 'bge-large-en');
+
+    console.log('=== SEEDING COMPLETE: 5 Courses Created ===');
 
   } catch (text) {
     console.error(text);

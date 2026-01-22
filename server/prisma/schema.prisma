@@ -36,6 +36,7 @@ model Course {
   modules     Module[]
   createdAt   DateTime @default(now())
   difficulty  Difficulty @default(BEGINNER)
+  tags        String[]   @default([])
 }
 
 model Module {
