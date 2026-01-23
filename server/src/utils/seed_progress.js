@@ -26,8 +26,8 @@ async function main() {
 
     console.log(`Found ${users.length} users and ${lessons.length} lessons.`);
 
-    // Clear existing progress (Optional: remove this if you want to be additive)
-    // await progressCollection.deleteMany({}); 
+    // Clear existing progress to avoid orphaned records from previous seeds
+    await progressCollection.deleteMany({}); 
 
     const progressEntries = [];
     const timestamp = new Date();

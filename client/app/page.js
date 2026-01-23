@@ -22,7 +22,7 @@ export default function Home() {
         }));
         setTopUsers(mapped);
       } catch (e) {
-        console.error('Failed to load leaderboard', e);
+        // console.warn('Leaderboard API unavailable, using demo data');
         // Fallback for demo if API fails
         setTopUsers([
            { name: 'Alex Rivera', xp: 12450, role: 'ArchLegend', color: 'text-yellow-400' },

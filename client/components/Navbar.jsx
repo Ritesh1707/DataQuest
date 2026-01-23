@@ -89,9 +89,18 @@ export default function Navbar() {
                     <span>Dashboard</span>
                   </Link>
 
-                  <Link href="/achievements" 
+                  <Link href="/leaderboard" 
                     className={`flex items-center space-x-2 text-sm font-medium transition-colors ${
-                      pathname === '/achievements' ? 'text-[#FF3621]' : 'text-slate-400 hover:text-white'
+                      pathname === '/leaderboard' ? 'text-[#FF3621]' : 'text-slate-400 hover:text-white'
+                    }`}
+                  >
+                    <Trophy className="w-4 h-4" />
+                    <span>Leaderboard</span>
+                  </Link>
+                  
+                  <Link href="/profile" 
+                    className={`flex items-center space-x-2 text-sm font-medium transition-colors ${
+                      pathname === '/profile' ? 'text-[#FF3621]' : 'text-slate-400 hover:text-white'
                     }`}
                   >
                     <Award className="w-4 h-4" />
@@ -106,7 +115,7 @@ export default function Navbar() {
                   <Link href="/profile" className="hidden md:flex items-center space-x-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
                      <Trophy className="w-3.5 h-3.5 text-yellow-500" />
                      <span className="text-xs font-mono text-yellow-500">
-                        Rank {rank ? `#${rank}` : '#...'}
+                        {rank ? `Rank #${rank}` : 'Calculating...'}
                      </span>
                   </Link>
 
