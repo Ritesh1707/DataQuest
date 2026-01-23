@@ -1,91 +1,130 @@
 'use client';
 import { motion } from 'framer-motion';
-import { Shield, Sparkles, TrendingUp, Zap } from 'lucide-react';
+import { Shield, Sparkles, TrendingUp, Zap, Terminal } from 'lucide-react';
 
 export default function PilotStatsCard({ user, stats, theme }) {
-  // Enhanced "Holographic" ID Card look
+  // Enhanced "Command Center" ID Card look - Optimized for sizing
   return (
-    <div className={`relative p-1 rounded-3xl bg-gradient-to-br ${theme.bg} overflow-hidden mb-12 animate-fade-in group`}>
-       {/* Animated Border Glow */}
-       <div className={`absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 z-0 pointer-events-none`} />
-       
-       <div className="relative z-10 bg-black/40 backdrop-blur-xl rounded-[22px] p-8 border border-white/10">
-          
-          <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
-             {/* Holographic Avatar Frame */}
-             <div className="relative">
-                <div className={`w-32 h-32 rounded-2xl border-2 ${theme.border} flex items-center justify-center bg-slate-900/80 shadow-[0_0_30px_rgba(0,0,0,0.5)] relative overflow-hidden group-hover:scale-105 transition-transform duration-500`}>
-                   <img 
-                      src={`https://api.dicebear.com/9.x/dylan/svg?seed=${user?.name || 'User'}&backgroundColor=1e293b`} 
-                      alt="Pilot" 
-                      className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
-                   />
-                   {/* Scanline effect */}
-                   <div className="absolute inset-0 bg-[linear-gradient(transparent_0%,rgba(0,255,0,0.1)_50%,transparent_100%)] bg-[length:100%_4px] opacity-20 pointer-events-none" />
-                </div>
-                {/* Level Badge */}
-                <div className="absolute -bottom-3 -right-3 w-10 h-10 bg-brick rounded-lg rotate-12 flex items-center justify-center font-black text-white shadow-lg border-2 border-[#1e293b]">
-                   {user?.level}
-                </div>
-             </div>
-
-             <div className="flex-1 text-center md:text-left space-y-4">
-                <div>
-                   <div className="flex items-center justify-center md:justify-start gap-3 mb-1">
-                      <h1 className="text-5xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-400 uppercase">
-                         {user?.name}
-                      </h1>
-                      <div className={`px-2 py-0.5 rounded text-[10px] uppercase font-bold tracking-widest border ${theme.border} ${theme.text} bg-black/50`}>
-                         ID-{user?.id?.substring(0,6) || '0000'}
-                      </div>
-                   </div>
-                   <p className={`text-sm font-mono tracking-widest uppercase ${theme.text} opacity-80 flex items-center gap-2 justify-center md:justify-start`}>
-                      <Shield className="w-3 h-3" /> Class: {stats?.identity?.topSkill || 'Novice'} // {user?.xp.toLocaleString()} XP
-                   </p>
-                </div>
-
-                {/* Status Hexagons */}
-                <div className="flex flex-wrap items-center justify-center md:justify-start gap-2">
-                   <StatusHex label="Streak" value="3 Days" icon={<Zap className="w-3 h-3" />} color="text-yellow-400" border="border-yellow-500/30" />
-                   <StatusHex label="Rank" value={stats?.rank ? `#${stats.rank}` : '#--'} icon={<TrendingUp className="w-3 h-3" />} color="text-brick" border="border-brick/30" />
-                   <StatusHex label="Badges" value={stats?.achievements?.filter(a => a.unlocked)?.length || 0} icon={<Sparkles className="w-3 h-3" />} color="text-purple-400" border="border-purple-500/30" />
-                </div>
-             </div>
-
-             {/* Dynamic Status Effects (Right Side) */}
-             <div className="hidden md:block w-48 space-y-2">
-                <div className="text-[10px] uppercase tracking-widest text-slate-500 font-bold mb-2">Active Protocols</div>
-                {/* Theme Effect */}
-                <div className={`p-2 rounded border ${theme.border} bg-${theme.text}/5 flex items-center gap-3`}>
-                   <div className={`w-1.5 h-1.5 rounded-full bg-${theme.text.split('-')[1]}-500 animate-pulse`} /> 
-                   <div className="text-xs">
-                      <div className={`font-bold ${theme.text}`}>Aura: {theme?.bg.split('-')[1]}</div>
-                      <div className="text-[10px] text-slate-400 opacity-70">+5% XP Gain</div>
-                   </div>
-                </div>
-                {/* Focus Effect (Mock) */}
-                <div className="p-2 rounded border border-blue-500/30 bg-blue-500/5 flex items-center gap-3 opacity-50">
-                    <div className="w-1.5 h-1.5 rounded-full bg-blue-500" />
-                    <div className="text-xs">
-                       <div className="font-bold text-blue-400">Focus Mode</div>
-                       <div className="text-[10px] text-slate-400 opacity-70">Inactive</div>
+    <div className="w-full flex justify-center mb-8 animate-fade-in px-2 sm:px-0">
+        <div className={`relative w-full max-w-5xl rounded-3xl bg-slate-900/90 border border-white/10 overflow-hidden group shadow-2xl`}>
+           {/* Animated Ambient Glow */}
+           <div className={`absolute inset-0 bg-gradient-to-br ${theme.bg} opacity-10 group-hover:opacity-20 transition-opacity duration-700`} />
+           
+           {/* Top Tech-line decoration */}
+           <div className="absolute top-0 left-12 right-12 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+           
+           <div className="relative z-10 p-6 md:p-8">
+              
+              <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+                 
+                 {/* Left: Avatar Section (Compact Cols) */}
+                 <div className="md:col-span-3 flex flex-col items-center">
+                    <div className="relative w-32 h-32 md:w-40 md:h-40 group-hover:scale-[1.02] transition-transform duration-500 ease-out">
+                       {/* Avatar Frame */}
+                       <div className={`absolute inset-0 bg-gradient-to-br from-white/5 to-white/0 rounded-2xl border ${theme.border} backdrop-blur-sm p-1 shadow-lg`}>
+                          <div className="w-full h-full rounded-xl overflow-hidden bg-slate-950 relative">
+                             <img 
+                                src={`https://api.dicebear.com/9.x/dylan/svg?seed=${user?.name || 'User'}&backgroundColor=1e293b`} 
+                                alt="Pilot" 
+                                className="w-full h-full object-cover"
+                             />
+                             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                          </div>
+                       </div>
+                       
+                       {/* Level Badge */}
+                       <div className="absolute -bottom-3 -right-3 bg-[#0f172a] p-1 rounded-lg border border-white/10 shadow-lg transform rotate-6">
+                          <div className={`w-10 h-10 rounded ${theme.bg.replace('/50', '')} flex flex-col items-center justify-center border ${theme.border}`}>
+                             <span className="text-[7px] uppercase font-bold tracking-wider text-white/70">Lvl</span>
+                             <span className="text-lg font-black text-white leading-none">{user?.level}</span>
+                          </div>
+                       </div>
                     </div>
-                </div>
-             </div>
-          </div>
-       </div>
+                 </div>
+    
+                 {/* Middle: Identity & Main Stats */}
+                 <div className="md:col-span-6 space-y-4 text-center md:text-left">
+                    <div>
+                       <div className="flex flex-col md:flex-row items-center md:items-baseline gap-3 mb-1">
+                           <h1 className="text-3xl md:text-5xl font-black tracking-tighter text-white drop-shadow-lg uppercase">
+                              {user?.name}
+                           </h1>
+                           <div className="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-md">
+                              <Terminal className="w-3 h-3 text-emerald-400" />
+                              <span className="text-[10px] font-mono text-emerald-300 tracking-widest">{stats?.identity?.topSkill || 'ROOKIE'}</span>
+                           </div>
+                       </div>
+                       
+                       <p className="text-slate-400 font-medium text-sm md:text-sm max-w-md mx-auto md:mx-0 leading-relaxed line-clamp-2">
+                          {user?.bio || "Ready to deploy. Preparing metrics for the next mission cycle."}
+                       </p>
+                    </div>
+    
+                    {/* Primary Metrics Grid - More Compact */}
+                    <div className="grid grid-cols-3 gap-2 md:gap-3 max-w-md mx-auto md:mx-0">
+                       <MetricTile 
+                          label="Streak" 
+                          value="3 Days" 
+                          icon={<Zap className="w-3.5 h-3.5 text-amber-400" />} 
+                       />
+                       <MetricTile 
+                          label="Rank" 
+                          value={stats?.rank ? `#${stats.rank}` : 'N/A'} 
+                          icon={<TrendingUp className="w-3.5 h-3.5 text-cyan-400" />} 
+                       />
+                       <MetricTile 
+                          label="Badges" 
+                          value={stats?.achievements?.filter(a => a.unlocked)?.length || 0} 
+                          icon={<Shield className="w-3.5 h-3.5 text-purple-400" />} 
+                       />
+                    </div>
+                 </div>
+    
+                 {/* Right: Status / Actions (Condensed) */}
+                 <div className="hidden md:flex md:col-span-3 flex-col gap-2 justify-center pl-6 border-l border-white/5">
+                    <div className="text-[10px] uppercase tracking-[0.2em] text-slate-500 font-bold mb-1">System Status</div>
+                    
+                    <StatusRow label="NET" value="Stable" color="bg-emerald-500" />
+                    <StatusRow label="XP+" value="Active" color="bg-purple-500" animate />
+                    
+                    <div className="mt-2 p-2.5 rounded-lg bg-white/5 border border-white/5">
+                       <div className="flex justify-between text-[10px] mb-1">
+                          <span className="text-slate-400">XP Progress</span>
+                          <span className="text-white font-mono">{user?.xp?.toLocaleString()}</span>
+                       </div>
+                       <div className="w-full h-1 bg-slate-800 rounded-full overflow-hidden">
+                          <div className="h-full bg-gradient-to-r from-blue-500 to-indigo-500 w-[70%]" />
+                       </div>
+                    </div>
+                 </div>
+    
+              </div>
+           </div>
+        </div>
     </div>
   );
 }
 
-function StatusHex({ label, value, icon, color, border }) {
-   return (
-      <div className={`flex items-center gap-2 px-3 py-1.5 rounded-md border ${border} bg-slate-900/50 backdrop-blur w-fit`}>
-         <div className={`${color}`}>{icon}</div>
-         <div className="flex flex-col text-left leading-none">
-            <span className="text-[9px] text-slate-500 uppercase font-bold tracking-wider">{label}</span>
-            <span className={`text-sm font-bold text-white font-mono`}>{value}</span>
-         </div>
-      </div>
-   )
+function MetricTile({ label, value, icon }) {
+    return (
+       <div className="flex flex-col p-2.5 rounded-xl bg-slate-950/30 border border-white/5 hover:bg-white/5 transition-colors group/tile text-center md:text-left">
+          <div className="flex items-center justify-center md:justify-start gap-1.5 mb-1 opacity-60 group-hover/tile:opacity-100 transition-opacity">
+             {icon}
+             <span className="text-[9px] uppercase font-bold tracking-wider">{label}</span>
+          </div>
+          <div className="text-lg font-bold text-white font-mono">{value}</div>
+       </div>
+    )
+}
+
+function StatusRow({ label, value, color, animate }) {
+    return (
+       <div className="flex items-center justify-between text-xs py-0.5">
+          <span className="text-slate-400">{label}</span>
+          <div className="flex items-center gap-2">
+             <span className="text-white font-medium text-[10px] uppercase">{value}</span>
+             <div className={`w-1 h-1 rounded-full ${color} ${animate ? 'animate-pulse' : ''}`} />
+          </div>
+       </div>
+    )
 }

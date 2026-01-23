@@ -43,7 +43,7 @@ export default function AchievementShowcase({ achievements = [] }) {
         </div>
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3">
         {displayAchievements.map((achievement, idx) => {
           const rarity = achievement.rarity || 'common';
           const isUnlocked = achievement.unlocked;
@@ -57,45 +57,44 @@ export default function AchievementShowcase({ achievements = [] }) {
               className={`relative group cursor-pointer`}
             >
               <div
-                className={`p-4 rounded-xl border-2 transition-all duration-300 ${
+                className={`p-3 rounded-xl border transition-all duration-300 h-full flex flex-col items-center justify-between ${
                   isUnlocked
                     ? `bg-gradient-to-br ${rarityColors[rarity]} ${rarityBorders[rarity]} ${rarityGlows[rarity]} shadow-lg hover:scale-105`
-                    : 'bg-slate-900/50 border-slate-800 opacity-60 hover:opacity-80'
+                    : 'bg-slate-900/40 border-slate-800 opacity-60 hover:opacity-80 hover:bg-slate-900/60'
                 }`}
               >
                 {/* Badge Icon */}
-                {/* Badge Icon */}
-                <div className="flex justify-center mb-3 h-14 items-center">
+                <div className="flex justify-center mb-2 mt-1 h-10 items-center">
                   {isUnlocked ? (
                     <div className="relative">
                       {achievement.imageUrl ? (
-                         <img src={achievement.imageUrl} className="w-12 h-12 drop-shadow-[0_0_8px_rgba(255,255,255,0.3)] filter brightness-110" alt={achievement.name} />
+                         <img src={achievement.imageUrl} className="w-10 h-10 drop-shadow-[0_0_8px_rgba(255,255,255,0.3)] filter brightness-110" alt={achievement.name} />
                       ) : (
-                         <Award className="w-12 h-12 text-white" />
+                         <Award className="w-9 h-9 text-white" />
                       )}
                       
                       {rarity === 'legendary' && (
-                        <Sparkles className="w-4 h-4 text-yellow-300 absolute -top-1 -right-1 animate-pulse" />
+                        <Sparkles className="w-3 h-3 text-yellow-300 absolute -top-1 -right-1 animate-pulse" />
                       )}
                     </div>
                   ) : (
                     <div className="relative"> 
-                        <Lock className="w-8 h-8 text-slate-600" />
+                        <Lock className="w-6 h-6 text-slate-600" />
                     </div>
                   )}
                 </div>
 
                 {/* Badge Name */}
-                <h4 className={`text-sm font-bold text-center mb-1 ${isUnlocked ? 'text-white' : 'text-slate-500'}`}>
+                <h4 className={`text-[11px] font-bold text-center leading-tight mb-2 ${isUnlocked ? 'text-white' : 'text-slate-500'}`}>
                   {achievement.name}
                 </h4>
 
                 {/* Rarity Indicator */}
-                <div className="flex justify-center mb-2">
+                <div className="flex justify-center gap-0.5">
                   {[...Array(rarity === 'legendary' ? 4 : rarity === 'epic' ? 3 : rarity === 'rare' ? 2 : 1)].map((_, i) => (
                     <Star
                       key={i}
-                      className={`w-3 h-3 ${
+                      className={`w-2.5 h-2.5 ${
                         isUnlocked ? 'text-yellow-400 fill-yellow-400' : 'text-slate-700'
                       }`}
                     />
@@ -103,9 +102,9 @@ export default function AchievementShowcase({ achievements = [] }) {
                 </div>
 
                 {/* Hover Tooltip */}
-                <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-slate-900 border border-white/10 rounded-lg text-xs text-slate-300 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-10">
+                <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-slate-950 border border-white/10 rounded-lg text-[10px] text-slate-300 whitespace-normal min-w-[150px] text-center opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-20 shadow-xl">
                   {achievement.description}
-                  <div className="absolute top-full left-1/2 transform -translate-x-1/2 -mt-1 border-4 border-transparent border-t-slate-900"></div>
+                  <div className="absolute top-full left-1/2 transform -translate-x-1/2 -mt-1 border-4 border-transparent border-t-slate-950"></div>
                 </div>
               </div>
             </motion.div>
