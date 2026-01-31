@@ -1,0 +1,26 @@
+[
+  {
+    "_id": "696fc8c437dce87aac8eb109",
+    "userId": "696fc7c737dce87aac8eb108",
+    "badgeId": "696fc080bef8600d52d01bea",
+    "awardedAt": "2026-01-20T18:26:12.236Z"
+  },
+  {
+    "_id": "696fce9314264cbfb9bbd475",
+    "userId": "696fce8314264cbfb9bbd474",
+    "badgeId": "696fc080bef8600d52d01bea",
+    "awardedAt": "2026-01-20T18:50:59.925Z"
+  },
+  {
+    "_id": "696fdaceaed96f157573b956",
+    "userId": "696fda48aed96f157573b955",
+    "badgeId": "696fc080bef8600d52d01bea",
+    "awardedAt": "2026-01-20T19:43:10.882Z"
+  },
+  {
+    "_id": "696fdb4faed96f157573b958",
+    "userId": "696fdb3faed96f157573b957",
+    "badgeId": "696fc080bef8600d52d01bea",
+    "awardedAt": "2026-01-20T19:45:19.524Z"
+  }
+]

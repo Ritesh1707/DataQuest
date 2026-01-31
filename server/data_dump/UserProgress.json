@@ -1,0 +1,1325 @@
+[
+  {
+    "_id": "6973b77a5f6ea267031b96af",
+    "lessonId": "69729e7dff2df7609d6d1526",
+    "userId": "696e6b9841ba349f6db5cb27",
+    "completedAt": "2026-01-20T16:19:33.228Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b96b0",
+    "lessonId": "69729e7dff2df7609d6d1536",
+    "userId": "696e6b9841ba349f6db5cb27",
+    "completedAt": "2026-01-14T21:38:01.427Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b96b1",
+    "lessonId": "69729e7dff2df7609d6d1529",
+    "userId": "696e6b9841ba349f6db5cb27",
+    "completedAt": "2026-01-14T00:27:56.490Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b96b2",
+    "lessonId": "69729e7dff2df7609d6d1544",
+    "userId": "696e70986540a056b2c185ea",
+    "completedAt": "2026-01-20T14:52:46.679Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b96b3",
+    "lessonId": "69729e7dff2df7609d6d1529",
+    "userId": "696e70986540a056b2c185ea",
+    "completedAt": "2026-01-14T21:59:00.722Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b96b4",
+    "lessonId": "69729e7dff2df7609d6d1540",
+    "userId": "696e70986540a056b2c185ea",
+    "completedAt": "2026-01-17T11:36:00.082Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b96b5",
+    "lessonId": "69729e7dff2df7609d6d154b",
+    "userId": "696e716a6540a056b2c185eb",
+    "completedAt": "2026-01-13T20:55:00.458Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b96b6",
+    "lessonId": "69729e7dff2df7609d6d1547",
+    "userId": "696e716a6540a056b2c185eb",
+    "completedAt": "2026-01-20T13:50:24.881Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b96b7",
+    "lessonId": "69729e7dff2df7609d6d1539",
+    "userId": "696e716a6540a056b2c185eb",
+    "completedAt": "2026-01-15T21:22:31.842Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b96b8",
+    "lessonId": "69729e7dff2df7609d6d1530",
+    "userId": "696e716a6540a056b2c185eb",
+    "completedAt": "2026-01-12T10:58:40.639Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b96b9",
+    "lessonId": "69729e7dff2df7609d6d1533",
+    "userId": "696e716a6540a056b2c185eb",
+    "completedAt": "2026-01-13T15:58:20.833Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b96ba",
+    "lessonId": "69729e7dff2df7609d6d1536",
+    "userId": "696e716a6540a056b2c185eb",
+    "completedAt": "2026-01-16T11:18:48.303Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b96bb",
+    "lessonId": "69729e7dff2df7609d6d1540",
+    "userId": "696e716a6540a056b2c185eb",
+    "completedAt": "2026-01-23T14:30:51.540Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b96bc",
+    "lessonId": "69729e7dff2df7609d6d152c",
+    "userId": "696e716a6540a056b2c185eb",
+    "completedAt": "2026-01-14T02:55:02.255Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b96bd",
+    "lessonId": "69729e7dff2df7609d6d1529",
+    "userId": "696e716a6540a056b2c185eb",
+    "completedAt": "2026-01-16T22:34:46.674Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b96be",
+    "lessonId": "69729e7dff2df7609d6d152c",
+    "userId": "696e72b96540a056b2c185ec",
+    "completedAt": "2026-01-17T02:31:01.268Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b96bf",
+    "lessonId": "69729e7dff2df7609d6d1544",
+    "userId": "696e72b96540a056b2c185ec",
+    "completedAt": "2026-01-22T07:23:33.513Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b96c0",
+    "lessonId": "69729e7dff2df7609d6d1547",
+    "userId": "696e72b96540a056b2c185ec",
+    "completedAt": "2026-01-21T18:54:46.980Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b96c1",
+    "lessonId": "69729e7dff2df7609d6d1539",
+    "userId": "696e79c45fbd1684d6ca018c",
+    "completedAt": "2026-01-22T16:14:42.718Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b96c2",
+    "lessonId": "69729e7dff2df7609d6d1540",
+    "userId": "696e79c45fbd1684d6ca018c",
+    "completedAt": "2026-01-17T17:19:50.958Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b96c3",
+    "lessonId": "69729e7dff2df7609d6d1544",
+    "userId": "696e79c45fbd1684d6ca018c",
+    "completedAt": "2026-01-12T17:21:53.690Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b96c4",
+    "lessonId": "69729e7dff2df7609d6d153d",
+    "userId": "696e79c45fbd1684d6ca018c",
+    "completedAt": "2026-01-18T16:42:57.652Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b96c5",
+    "lessonId": "69729e7dff2df7609d6d1547",
+    "userId": "696e79c45fbd1684d6ca018c",
+    "completedAt": "2026-01-20T17:02:52.578Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b96c6",
+    "lessonId": "69729e7dff2df7609d6d154b",
+    "userId": "696e79c45fbd1684d6ca018c",
+    "completedAt": "2026-01-18T07:06:44.308Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b96c7",
+    "lessonId": "69729e7dff2df7609d6d1526",
+    "userId": "696e79c45fbd1684d6ca018c",
+    "completedAt": "2026-01-15T13:19:10.205Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b96c8",
+    "lessonId": "69729e7dff2df7609d6d152c",
+    "userId": "696e79c45fbd1684d6ca018c",
+    "completedAt": "2026-01-14T21:16:01.179Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b96c9",
+    "lessonId": "69729e7dff2df7609d6d1533",
+    "userId": "696e79c45fbd1684d6ca018c",
+    "completedAt": "2026-01-12T13:05:45.927Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b96ca",
+    "lessonId": "69729e7dff2df7609d6d1544",
+    "userId": "696e8543740570e5f7653957",
+    "completedAt": "2026-01-16T09:27:12.446Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b96cb",
+    "lessonId": "69729e7dff2df7609d6d1526",
+    "userId": "696e8543740570e5f7653957",
+    "completedAt": "2026-01-22T23:21:46.680Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b96cc",
+    "lessonId": "69729e7dff2df7609d6d1536",
+    "userId": "696e8543740570e5f7653957",
+    "completedAt": "2026-01-20T03:59:37.282Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b96cd",
+    "lessonId": "69729e7dff2df7609d6d1530",
+    "userId": "696e866b20271a614cf32f44",
+    "completedAt": "2026-01-20T14:01:06.998Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b96ce",
+    "lessonId": "69729e7dff2df7609d6d1526",
+    "userId": "696e866b20271a614cf32f44",
+    "completedAt": "2026-01-18T00:42:22.310Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b96cf",
+    "lessonId": "69729e7dff2df7609d6d1540",
+    "userId": "696e866b20271a614cf32f44",
+    "completedAt": "2026-01-13T18:32:35.009Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b96d0",
+    "lessonId": "69729e7dff2df7609d6d153d",
+    "userId": "696e87f620271a614cf32f45",
+    "completedAt": "2026-01-17T18:09:21.617Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b96d1",
+    "lessonId": "69729e7dff2df7609d6d1539",
+    "userId": "696e87f620271a614cf32f45",
+    "completedAt": "2026-01-16T19:01:13.724Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b96d2",
+    "lessonId": "69729e7dff2df7609d6d1526",
+    "userId": "696e87f620271a614cf32f45",
+    "completedAt": "2026-01-13T04:48:46.896Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b96d3",
+    "lessonId": "69729e7dff2df7609d6d1539",
+    "userId": "696fc7c737dce87aac8eb108",
+    "completedAt": "2026-01-14T20:37:19.431Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b96d4",
+    "lessonId": "69729e7dff2df7609d6d1530",
+    "userId": "696fc7c737dce87aac8eb108",
+    "completedAt": "2026-01-16T18:43:08.313Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b96d5",
+    "lessonId": "69729e7dff2df7609d6d1547",
+    "userId": "696fc7c737dce87aac8eb108",
+    "completedAt": "2026-01-12T08:45:41.178Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b96d6",
+    "lessonId": "69729e7dff2df7609d6d1540",
+    "userId": "696fc7c737dce87aac8eb108",
+    "completedAt": "2026-01-23T14:55:29.509Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b96d7",
+    "lessonId": "69729e7dff2df7609d6d152c",
+    "userId": "696fc7c737dce87aac8eb108",
+    "completedAt": "2026-01-17T09:18:27.717Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b96d8",
+    "lessonId": "69729e7dff2df7609d6d1544",
+    "userId": "696fc7c737dce87aac8eb108",
+    "completedAt": "2026-01-14T01:52:02.975Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b96d9",
+    "lessonId": "69729e7dff2df7609d6d1526",
+    "userId": "696fc7c737dce87aac8eb108",
+    "completedAt": "2026-01-19T09:46:45.708Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b96da",
+    "lessonId": "69729e7dff2df7609d6d153d",
+    "userId": "696fc7c737dce87aac8eb108",
+    "completedAt": "2026-01-21T14:42:43.619Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b96db",
+    "lessonId": "69729e7dff2df7609d6d1536",
+    "userId": "696fc7c737dce87aac8eb108",
+    "completedAt": "2026-01-15T13:35:46.864Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b96dc",
+    "lessonId": "69729e7dff2df7609d6d1530",
+    "userId": "696fce8314264cbfb9bbd474",
+    "completedAt": "2026-01-19T05:42:23.715Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b96dd",
+    "lessonId": "69729e7dff2df7609d6d1536",
+    "userId": "696fce8314264cbfb9bbd474",
+    "completedAt": "2026-01-16T01:11:14.653Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b96de",
+    "lessonId": "69729e7dff2df7609d6d1539",
+    "userId": "696fce8314264cbfb9bbd474",
+    "completedAt": "2026-01-12T21:08:44.191Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b96df",
+    "lessonId": "69729e7dff2df7609d6d153d",
+    "userId": "696fce8314264cbfb9bbd474",
+    "completedAt": "2026-01-15T04:38:02.878Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b96e0",
+    "lessonId": "69729e7dff2df7609d6d1533",
+    "userId": "696fce8314264cbfb9bbd474",
+    "completedAt": "2026-01-22T10:54:21.769Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b96e1",
+    "lessonId": "69729e7dff2df7609d6d1540",
+    "userId": "696fce8314264cbfb9bbd474",
+    "completedAt": "2026-01-14T10:36:26.471Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b96e2",
+    "lessonId": "69729e7dff2df7609d6d154b",
+    "userId": "696fce8314264cbfb9bbd474",
+    "completedAt": "2026-01-19T09:33:13.717Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b96e3",
+    "lessonId": "69729e7dff2df7609d6d1544",
+    "userId": "696fce8314264cbfb9bbd474",
+    "completedAt": "2026-01-22T22:53:28.807Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b96e4",
+    "lessonId": "69729e7dff2df7609d6d1547",
+    "userId": "696fce8314264cbfb9bbd474",
+    "completedAt": "2026-01-17T20:53:31.717Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b96e5",
+    "lessonId": "69729e7dff2df7609d6d1544",
+    "userId": "696fda48aed96f157573b955",
+    "completedAt": "2026-01-21T10:44:37.904Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b96e6",
+    "lessonId": "69729e7dff2df7609d6d1533",
+    "userId": "696fda48aed96f157573b955",
+    "completedAt": "2026-01-15T10:54:34.009Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b96e7",
+    "lessonId": "69729e7dff2df7609d6d153d",
+    "userId": "696fda48aed96f157573b955",
+    "completedAt": "2026-01-20T23:47:24.919Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b96e8",
+    "lessonId": "69729e7dff2df7609d6d1547",
+    "userId": "696fdb3faed96f157573b957",
+    "completedAt": "2026-01-21T12:09:04.955Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b96e9",
+    "lessonId": "69729e7dff2df7609d6d1533",
+    "userId": "696fdb3faed96f157573b957",
+    "completedAt": "2026-01-14T23:09:19.233Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b96ea",
+    "lessonId": "69729e7dff2df7609d6d152c",
+    "userId": "696fdb3faed96f157573b957",
+    "completedAt": "2026-01-20T13:43:51.642Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b96eb",
+    "lessonId": "69729e7dff2df7609d6d1536",
+    "userId": "696fdb3faed96f157573b957",
+    "completedAt": "2026-01-15T09:46:50.942Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b96ec",
+    "lessonId": "69729e7dff2df7609d6d1544",
+    "userId": "696fdb3faed96f157573b957",
+    "completedAt": "2026-01-20T05:38:38.469Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b96ed",
+    "lessonId": "69729e7dff2df7609d6d1529",
+    "userId": "696fdb3faed96f157573b957",
+    "completedAt": "2026-01-15T21:29:08.195Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b96ee",
+    "lessonId": "69729e7dff2df7609d6d1526",
+    "userId": "696fdb3faed96f157573b957",
+    "completedAt": "2026-01-12T23:11:29.438Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b96ef",
+    "lessonId": "69729e7dff2df7609d6d1539",
+    "userId": "696fdb3faed96f157573b957",
+    "completedAt": "2026-01-15T09:55:58.143Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b96f0",
+    "lessonId": "69729e7dff2df7609d6d1530",
+    "userId": "696fdb3faed96f157573b957",
+    "completedAt": "2026-01-15T08:27:48.118Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b96f1",
+    "lessonId": "69729e7dff2df7609d6d153d",
+    "userId": "69727c22178881f8deecd392",
+    "completedAt": "2026-01-23T05:33:49.707Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b96f2",
+    "lessonId": "69729e7dff2df7609d6d1547",
+    "userId": "69727c22178881f8deecd392",
+    "completedAt": "2026-01-18T09:48:50.263Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b96f3",
+    "lessonId": "69729e7dff2df7609d6d1533",
+    "userId": "69727c22178881f8deecd392",
+    "completedAt": "2026-01-19T20:46:50.260Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b96f4",
+    "lessonId": "69729e7dff2df7609d6d1526",
+    "userId": "69728c1d86e372e5ab1b3d0a",
+    "completedAt": "2026-01-14T15:04:16.827Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b96f5",
+    "lessonId": "69729e7dff2df7609d6d154b",
+    "userId": "69728c1d86e372e5ab1b3d0a",
+    "completedAt": "2026-01-12T13:28:33.374Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b96f6",
+    "lessonId": "69729e7dff2df7609d6d1540",
+    "userId": "69728c1d86e372e5ab1b3d0a",
+    "completedAt": "2026-01-21T02:07:08.992Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b96f7",
+    "lessonId": "69729e7dff2df7609d6d1547",
+    "userId": "6972980dc6e09344167023fa",
+    "completedAt": "2026-01-14T07:28:24.112Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b96f8",
+    "lessonId": "69729e7dff2df7609d6d1526",
+    "userId": "6972980dc6e09344167023fa",
+    "completedAt": "2026-01-15T03:14:07.272Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b96f9",
+    "lessonId": "69729e7dff2df7609d6d154b",
+    "userId": "6972980dc6e09344167023fa",
+    "completedAt": "2026-01-22T19:58:16.843Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b96fa",
+    "lessonId": "69729e7dff2df7609d6d1547",
+    "userId": "6972980dc6e09344167023fb",
+    "completedAt": "2026-01-18T02:26:15.252Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b96fb",
+    "lessonId": "69729e7dff2df7609d6d1530",
+    "userId": "6972980dc6e09344167023fb",
+    "completedAt": "2026-01-21T04:26:45.196Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b96fc",
+    "lessonId": "69729e7dff2df7609d6d1544",
+    "userId": "6972980dc6e09344167023fb",
+    "completedAt": "2026-01-16T16:05:41.371Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b96fd",
+    "lessonId": "69729e7dff2df7609d6d1547",
+    "userId": "6972980dc6e09344167023fc",
+    "completedAt": "2026-01-14T22:41:06.013Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b96fe",
+    "lessonId": "69729e7dff2df7609d6d1526",
+    "userId": "6972980dc6e09344167023fc",
+    "completedAt": "2026-01-13T19:18:49.924Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b96ff",
+    "lessonId": "69729e7dff2df7609d6d1530",
+    "userId": "6972980dc6e09344167023fc",
+    "completedAt": "2026-01-19T08:17:26.267Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b9700",
+    "lessonId": "69729e7dff2df7609d6d1529",
+    "userId": "6972980dc6e09344167023fc",
+    "completedAt": "2026-01-16T02:02:58.009Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b9701",
+    "lessonId": "69729e7dff2df7609d6d152c",
+    "userId": "6972980dc6e09344167023fc",
+    "completedAt": "2026-01-17T14:56:51.581Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b9702",
+    "lessonId": "69729e7dff2df7609d6d1540",
+    "userId": "6972980dc6e09344167023fc",
+    "completedAt": "2026-01-19T13:30:25.309Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b9703",
+    "lessonId": "69729e7dff2df7609d6d154b",
+    "userId": "6972980dc6e09344167023fc",
+    "completedAt": "2026-01-14T21:51:15.826Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b9704",
+    "lessonId": "69729e7dff2df7609d6d1544",
+    "userId": "6972980dc6e09344167023fc",
+    "completedAt": "2026-01-16T11:51:41.012Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b9705",
+    "lessonId": "69729e7dff2df7609d6d153d",
+    "userId": "6972980dc6e09344167023fc",
+    "completedAt": "2026-01-15T01:09:50.372Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b9706",
+    "lessonId": "69729e7dff2df7609d6d1547",
+    "userId": "6972980dc6e09344167023fd",
+    "completedAt": "2026-01-21T09:58:40.281Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b9707",
+    "lessonId": "69729e7dff2df7609d6d1533",
+    "userId": "6972980dc6e09344167023fd",
+    "completedAt": "2026-01-12T17:09:16.339Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b9708",
+    "lessonId": "69729e7dff2df7609d6d153d",
+    "userId": "6972980dc6e09344167023fd",
+    "completedAt": "2026-01-22T07:42:07.612Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b9709",
+    "lessonId": "69729e7dff2df7609d6d153d",
+    "userId": "6972980dc6e09344167023fe",
+    "completedAt": "2026-01-17T17:05:56.392Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b970a",
+    "lessonId": "69729e7dff2df7609d6d1539",
+    "userId": "6972980dc6e09344167023fe",
+    "completedAt": "2026-01-12T11:06:38.549Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b970b",
+    "lessonId": "69729e7dff2df7609d6d154b",
+    "userId": "6972980dc6e09344167023fe",
+    "completedAt": "2026-01-14T04:46:50.612Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b970c",
+    "lessonId": "69729e7dff2df7609d6d153d",
+    "userId": "6972980dc6e09344167023ff",
+    "completedAt": "2026-01-16T08:51:14.994Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b970d",
+    "lessonId": "69729e7dff2df7609d6d1539",
+    "userId": "6972980dc6e09344167023ff",
+    "completedAt": "2026-01-17T11:20:42.955Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b970e",
+    "lessonId": "69729e7dff2df7609d6d1526",
+    "userId": "6972980dc6e09344167023ff",
+    "completedAt": "2026-01-19T02:22:52.315Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b970f",
+    "lessonId": "69729e7dff2df7609d6d1533",
+    "userId": "6972980dc6e09344167023ff",
+    "completedAt": "2026-01-14T19:41:50.167Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b9710",
+    "lessonId": "69729e7dff2df7609d6d1544",
+    "userId": "6972980dc6e09344167023ff",
+    "completedAt": "2026-01-19T19:00:13.990Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b9711",
+    "lessonId": "69729e7dff2df7609d6d1540",
+    "userId": "6972980dc6e09344167023ff",
+    "completedAt": "2026-01-23T13:13:55.149Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b9712",
+    "lessonId": "69729e7dff2df7609d6d1547",
+    "userId": "6972980dc6e09344167023ff",
+    "completedAt": "2026-01-13T13:30:12.093Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b9713",
+    "lessonId": "69729e7dff2df7609d6d154b",
+    "userId": "6972980dc6e09344167023ff",
+    "completedAt": "2026-01-17T18:27:36.221Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b9714",
+    "lessonId": "69729e7dff2df7609d6d1529",
+    "userId": "6972980dc6e09344167023ff",
+    "completedAt": "2026-01-20T11:04:40.895Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b9715",
+    "lessonId": "69729e7dff2df7609d6d1530",
+    "userId": "6972980dc6e0934416702400",
+    "completedAt": "2026-01-21T02:39:52.235Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b9716",
+    "lessonId": "69729e7dff2df7609d6d152c",
+    "userId": "6972980dc6e0934416702400",
+    "completedAt": "2026-01-14T14:55:21.032Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b9717",
+    "lessonId": "69729e7dff2df7609d6d1529",
+    "userId": "6972980dc6e0934416702400",
+    "completedAt": "2026-01-13T23:45:38.906Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b9718",
+    "lessonId": "69729e7dff2df7609d6d1529",
+    "userId": "6972980dc6e0934416702401",
+    "completedAt": "2026-01-21T22:31:50.983Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b9719",
+    "lessonId": "69729e7dff2df7609d6d152c",
+    "userId": "6972980dc6e0934416702401",
+    "completedAt": "2026-01-23T12:35:08.952Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b971a",
+    "lessonId": "69729e7dff2df7609d6d1539",
+    "userId": "6972980dc6e0934416702401",
+    "completedAt": "2026-01-18T18:23:24.259Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b971b",
+    "lessonId": "69729e7dff2df7609d6d1529",
+    "userId": "6972980dc6e0934416702402",
+    "completedAt": "2026-01-17T22:34:10.908Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b971c",
+    "lessonId": "69729e7dff2df7609d6d1530",
+    "userId": "6972980dc6e0934416702402",
+    "completedAt": "2026-01-16T14:41:59.192Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b971d",
+    "lessonId": "69729e7dff2df7609d6d152c",
+    "userId": "6972980dc6e0934416702402",
+    "completedAt": "2026-01-17T07:54:35.880Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b971e",
+    "lessonId": "69729e7dff2df7609d6d153d",
+    "userId": "6972980dc6e0934416702403",
+    "completedAt": "2026-01-14T23:30:00.497Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b971f",
+    "lessonId": "69729e7dff2df7609d6d1536",
+    "userId": "6972980dc6e0934416702403",
+    "completedAt": "2026-01-18T16:27:27.028Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b9720",
+    "lessonId": "69729e7dff2df7609d6d1529",
+    "userId": "6972980dc6e0934416702403",
+    "completedAt": "2026-01-13T20:46:56.833Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b9721",
+    "lessonId": "69729e7dff2df7609d6d154b",
+    "userId": "6972980dc6e0934416702404",
+    "completedAt": "2026-01-22T01:39:53.661Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b9722",
+    "lessonId": "69729e7dff2df7609d6d153d",
+    "userId": "6972980dc6e0934416702404",
+    "completedAt": "2026-01-20T06:54:35.222Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b9723",
+    "lessonId": "69729e7dff2df7609d6d1536",
+    "userId": "6972980dc6e0934416702404",
+    "completedAt": "2026-01-19T18:40:50.831Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b9724",
+    "lessonId": "69729e7dff2df7609d6d1526",
+    "userId": "6972980dc6e0934416702405",
+    "completedAt": "2026-01-21T15:34:49.179Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b9725",
+    "lessonId": "69729e7dff2df7609d6d1529",
+    "userId": "6972980dc6e0934416702405",
+    "completedAt": "2026-01-22T01:29:46.434Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b9726",
+    "lessonId": "69729e7dff2df7609d6d1536",
+    "userId": "6972980dc6e0934416702405",
+    "completedAt": "2026-01-20T19:08:55.166Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b9727",
+    "lessonId": "69729e7dff2df7609d6d153d",
+    "userId": "6972980dc6e0934416702405",
+    "completedAt": "2026-01-16T21:08:03.940Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b9728",
+    "lessonId": "69729e7dff2df7609d6d1539",
+    "userId": "6972980dc6e0934416702405",
+    "completedAt": "2026-01-18T15:56:05.082Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b9729",
+    "lessonId": "69729e7dff2df7609d6d1530",
+    "userId": "6972980dc6e0934416702405",
+    "completedAt": "2026-01-18T20:22:15.325Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b972a",
+    "lessonId": "69729e7dff2df7609d6d152c",
+    "userId": "6972980dc6e0934416702405",
+    "completedAt": "2026-01-13T22:22:35.763Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b972b",
+    "lessonId": "69729e7dff2df7609d6d1544",
+    "userId": "6972980dc6e0934416702405",
+    "completedAt": "2026-01-16T04:43:43.710Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b972c",
+    "lessonId": "69729e7dff2df7609d6d154b",
+    "userId": "6972980dc6e0934416702405",
+    "completedAt": "2026-01-19T22:56:01.246Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b972d",
+    "lessonId": "69729e7dff2df7609d6d1547",
+    "userId": "6972980dc6e0934416702406",
+    "completedAt": "2026-01-20T04:49:37.973Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b972e",
+    "lessonId": "69729e7dff2df7609d6d1539",
+    "userId": "6972980dc6e0934416702406",
+    "completedAt": "2026-01-19T10:21:46.836Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b972f",
+    "lessonId": "69729e7dff2df7609d6d1526",
+    "userId": "6972980dc6e0934416702406",
+    "completedAt": "2026-01-20T12:14:42.646Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b9730",
+    "lessonId": "69729e7dff2df7609d6d1533",
+    "userId": "6972980dc6e0934416702407",
+    "completedAt": "2026-01-14T17:23:55.910Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b9731",
+    "lessonId": "69729e7dff2df7609d6d1526",
+    "userId": "6972980dc6e0934416702407",
+    "completedAt": "2026-01-21T19:23:10.769Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b9732",
+    "lessonId": "69729e7dff2df7609d6d153d",
+    "userId": "6972980dc6e0934416702407",
+    "completedAt": "2026-01-13T13:27:21.225Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b9733",
+    "lessonId": "69729e7dff2df7609d6d1533",
+    "userId": "6972980dc6e0934416702408",
+    "completedAt": "2026-01-15T21:48:16.048Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b9734",
+    "lessonId": "69729e7dff2df7609d6d154b",
+    "userId": "6972980dc6e0934416702408",
+    "completedAt": "2026-01-23T01:01:45.898Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b9735",
+    "lessonId": "69729e7dff2df7609d6d1536",
+    "userId": "6972980dc6e0934416702408",
+    "completedAt": "2026-01-21T06:29:17.399Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b9736",
+    "lessonId": "69729e7dff2df7609d6d1540",
+    "userId": "6972980dc6e0934416702408",
+    "completedAt": "2026-01-13T22:50:53.171Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b9737",
+    "lessonId": "69729e7dff2df7609d6d1526",
+    "userId": "6972980dc6e0934416702408",
+    "completedAt": "2026-01-20T02:28:40.625Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b9738",
+    "lessonId": "69729e7dff2df7609d6d153d",
+    "userId": "6972980dc6e0934416702408",
+    "completedAt": "2026-01-15T19:35:14.306Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b9739",
+    "lessonId": "69729e7dff2df7609d6d1530",
+    "userId": "6972980dc6e0934416702408",
+    "completedAt": "2026-01-15T02:23:14.844Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b973a",
+    "lessonId": "69729e7dff2df7609d6d1547",
+    "userId": "6972980dc6e0934416702408",
+    "completedAt": "2026-01-15T23:17:29.822Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b973b",
+    "lessonId": "69729e7dff2df7609d6d1539",
+    "userId": "6972980dc6e0934416702408",
+    "completedAt": "2026-01-14T12:11:57.762Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b973c",
+    "lessonId": "69729e7dff2df7609d6d1526",
+    "userId": "6972980dc6e0934416702409",
+    "completedAt": "2026-01-19T14:01:09.772Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b973d",
+    "lessonId": "69729e7dff2df7609d6d1540",
+    "userId": "6972980dc6e0934416702409",
+    "completedAt": "2026-01-21T03:43:24.403Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b973e",
+    "lessonId": "69729e7dff2df7609d6d1533",
+    "userId": "6972980dc6e0934416702409",
+    "completedAt": "2026-01-22T12:26:21.496Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b973f",
+    "lessonId": "69729e7dff2df7609d6d1529",
+    "userId": "6972980dc6e093441670240a",
+    "completedAt": "2026-01-23T15:16:07.317Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b9740",
+    "lessonId": "69729e7dff2df7609d6d1544",
+    "userId": "6972980dc6e093441670240a",
+    "completedAt": "2026-01-13T18:31:33.967Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b9741",
+    "lessonId": "69729e7dff2df7609d6d153d",
+    "userId": "6972980dc6e093441670240a",
+    "completedAt": "2026-01-18T15:31:37.612Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b9742",
+    "lessonId": "69729e7dff2df7609d6d1530",
+    "userId": "6972980dc6e093441670240b",
+    "completedAt": "2026-01-14T13:43:07.278Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b9743",
+    "lessonId": "69729e7dff2df7609d6d1540",
+    "userId": "6972980dc6e093441670240b",
+    "completedAt": "2026-01-20T03:00:34.309Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b9744",
+    "lessonId": "69729e7dff2df7609d6d1547",
+    "userId": "6972980dc6e093441670240b",
+    "completedAt": "2026-01-23T04:13:16.513Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b9745",
+    "lessonId": "69729e7dff2df7609d6d1539",
+    "userId": "6972980dc6e093441670240c",
+    "completedAt": "2026-01-16T16:40:08.778Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b9746",
+    "lessonId": "69729e7dff2df7609d6d152c",
+    "userId": "6972980dc6e093441670240c",
+    "completedAt": "2026-01-15T12:07:57.784Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b9747",
+    "lessonId": "69729e7dff2df7609d6d1529",
+    "userId": "6972980dc6e093441670240c",
+    "completedAt": "2026-01-17T21:36:46.222Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b9748",
+    "lessonId": "69729e7dff2df7609d6d1536",
+    "userId": "6972980dc6e093441670240c",
+    "completedAt": "2026-01-20T07:54:25.019Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b9749",
+    "lessonId": "69729e7dff2df7609d6d1533",
+    "userId": "6972980dc6e093441670240c",
+    "completedAt": "2026-01-19T07:22:14.730Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b974a",
+    "lessonId": "69729e7dff2df7609d6d1547",
+    "userId": "6972980dc6e093441670240c",
+    "completedAt": "2026-01-14T06:31:33.623Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b974b",
+    "lessonId": "69729e7dff2df7609d6d153d",
+    "userId": "6972980dc6e093441670240c",
+    "completedAt": "2026-01-17T11:20:55.329Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b974c",
+    "lessonId": "69729e7dff2df7609d6d154b",
+    "userId": "6972980dc6e093441670240c",
+    "completedAt": "2026-01-19T01:38:30.500Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b974d",
+    "lessonId": "69729e7dff2df7609d6d1540",
+    "userId": "6972980dc6e093441670240c",
+    "completedAt": "2026-01-15T03:06:56.128Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b974e",
+    "lessonId": "69729e7dff2df7609d6d1536",
+    "userId": "6972980dc6e093441670240d",
+    "completedAt": "2026-01-15T02:42:29.057Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b974f",
+    "lessonId": "69729e7dff2df7609d6d152c",
+    "userId": "6972980dc6e093441670240d",
+    "completedAt": "2026-01-12T08:55:06.055Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b9750",
+    "lessonId": "69729e7dff2df7609d6d1530",
+    "userId": "6972980dc6e093441670240d",
+    "completedAt": "2026-01-15T19:57:36.154Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b9751",
+    "lessonId": "69729e7dff2df7609d6d154b",
+    "userId": "6972980dc6e093441670240e",
+    "completedAt": "2026-01-18T01:00:32.452Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b9752",
+    "lessonId": "69729e7dff2df7609d6d1530",
+    "userId": "6972980dc6e093441670240e",
+    "completedAt": "2026-01-12T13:10:52.739Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b9753",
+    "lessonId": "69729e7dff2df7609d6d1547",
+    "userId": "6972980dc6e093441670240e",
+    "completedAt": "2026-01-19T03:09:57.024Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b9754",
+    "lessonId": "69729e7dff2df7609d6d1529",
+    "userId": "6972980dc6e093441670240e",
+    "completedAt": "2026-01-22T23:03:42.643Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b9755",
+    "lessonId": "69729e7dff2df7609d6d152c",
+    "userId": "6972980dc6e093441670240e",
+    "completedAt": "2026-01-16T10:42:55.704Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b9756",
+    "lessonId": "69729e7dff2df7609d6d1536",
+    "userId": "6972980dc6e093441670240e",
+    "completedAt": "2026-01-15T08:53:16.607Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b9757",
+    "lessonId": "69729e7dff2df7609d6d1533",
+    "userId": "6972980dc6e093441670240e",
+    "completedAt": "2026-01-16T08:17:41.637Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b9758",
+    "lessonId": "69729e7dff2df7609d6d1539",
+    "userId": "6972980dc6e093441670240e",
+    "completedAt": "2026-01-17T01:40:18.523Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b9759",
+    "lessonId": "69729e7dff2df7609d6d1544",
+    "userId": "6972980dc6e093441670240e",
+    "completedAt": "2026-01-19T11:03:42.182Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b975a",
+    "lessonId": "69729e7dff2df7609d6d1539",
+    "userId": "6972980dc6e093441670240f",
+    "completedAt": "2026-01-13T19:56:11.828Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b975b",
+    "lessonId": "69729e7dff2df7609d6d1533",
+    "userId": "6972980dc6e093441670240f",
+    "completedAt": "2026-01-18T18:24:13.432Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b975c",
+    "lessonId": "69729e7dff2df7609d6d1526",
+    "userId": "6972980dc6e093441670240f",
+    "completedAt": "2026-01-21T10:00:45.565Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b975d",
+    "lessonId": "69729e7dff2df7609d6d1540",
+    "userId": "6972980dc6e0934416702410",
+    "completedAt": "2026-01-14T05:22:55.306Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b975e",
+    "lessonId": "69729e7dff2df7609d6d1547",
+    "userId": "6972980dc6e0934416702410",
+    "completedAt": "2026-01-16T16:52:45.076Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b975f",
+    "lessonId": "69729e7dff2df7609d6d1539",
+    "userId": "6972980dc6e0934416702410",
+    "completedAt": "2026-01-13T00:01:37.138Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b9760",
+    "lessonId": "69729e7dff2df7609d6d1530",
+    "userId": "6972980dc6e0934416702410",
+    "completedAt": "2026-01-12T08:45:10.910Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b9761",
+    "lessonId": "69729e7dff2df7609d6d1529",
+    "userId": "6972980dc6e0934416702410",
+    "completedAt": "2026-01-16T15:44:50.425Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b9762",
+    "lessonId": "69729e7dff2df7609d6d1544",
+    "userId": "6972980dc6e0934416702410",
+    "completedAt": "2026-01-12T07:32:05.074Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b9763",
+    "lessonId": "69729e7dff2df7609d6d152c",
+    "userId": "6972980dc6e0934416702410",
+    "completedAt": "2026-01-19T21:24:19.614Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b9764",
+    "lessonId": "69729e7dff2df7609d6d154b",
+    "userId": "6972980dc6e0934416702410",
+    "completedAt": "2026-01-13T00:27:12.121Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b9765",
+    "lessonId": "69729e7dff2df7609d6d1533",
+    "userId": "6972980dc6e0934416702410",
+    "completedAt": "2026-01-13T15:24:26.424Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b9766",
+    "lessonId": "69729e7dff2df7609d6d1526",
+    "userId": "6972980dc6e0934416702411",
+    "completedAt": "2026-01-18T07:45:54.169Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b9767",
+    "lessonId": "69729e7dff2df7609d6d1540",
+    "userId": "6972980dc6e0934416702411",
+    "completedAt": "2026-01-19T14:29:04.037Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b9768",
+    "lessonId": "69729e7dff2df7609d6d1544",
+    "userId": "6972980dc6e0934416702411",
+    "completedAt": "2026-01-12T05:15:13.406Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b9769",
+    "lessonId": "69729e7dff2df7609d6d1530",
+    "userId": "6972980dc6e0934416702412",
+    "completedAt": "2026-01-21T06:06:00.523Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b976a",
+    "lessonId": "69729e7dff2df7609d6d1547",
+    "userId": "6972980dc6e0934416702412",
+    "completedAt": "2026-01-22T14:21:07.561Z",
+    "status": "COMPLETED"
+  },
+  {
+    "_id": "6973b77a5f6ea267031b976b",
+    "lessonId": "69729e7dff2df7609d6d1529",
+    "userId": "6972980dc6e0934416702412",
+    "completedAt": "2026-01-22T18:07:27.618Z",
+    "status": "COMPLETED"
+  }
+]

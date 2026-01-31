@@ -1,0 +1,18 @@
+[
+  {
+    "_id": "6972894db49485e97adcdeca",
+    "title": "Lakehouse Architecture Mastery",
+    "description": "Test your knowledge on Medallion Architecture and Data Quality.",
+    "difficulty": "ADVANCED",
+    "moduleId": "6972892eaecb626ab43b5c8a",
+    "createdAt": "2026-01-22T20:32:13.033Z"
+  },
+  {
+    "_id": "6972894db49485e97adcdece",
+    "title": "Managed vs External Tables",
+    "description": "Validate your understanding of table types in Databricks.",
+    "difficulty": "BEGINNER",
+    "moduleId": "6972892eaecb626ab43b5c97",
+    "createdAt": "2026-01-22T20:32:13.046Z"
+  }
+]

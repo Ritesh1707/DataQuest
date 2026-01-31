@@ -1,0 +1,77 @@
+[
+  {
+    "_id": "69729e7dff2df7609d6d1524",
+    "title": "Databricks Solution Architect Masterclass",
+    "slug": "databricks-sa-masterclass",
+    "description": "The complete guide to designing, securing, and optimizing production-grade Lakehouse solutions.",
+    "tags": [
+      "Architecture",
+      "SQL",
+      "Delta Lake",
+      "Unity Catalog"
+    ],
+    "difficulty": "ADVANCED",
+    "createdAt": "2026-01-22T22:02:37.158Z",
+    "updatedAt": "2026-01-22T22:02:37.158Z"
+  },
+  {
+    "_id": "69729e7dff2df7609d6d152e",
+    "title": "Databricks Data Engineer Associate",
+    "slug": "data-engineer-associate",
+    "description": "Start your journey here. Master the fundamentals of ELT, Delta Lake, and Spark SQL.",
+    "tags": [
+      "Data Engineering",
+      "PySpark",
+      "SQL",
+      "Python"
+    ],
+    "difficulty": "BEGINNER",
+    "createdAt": "2026-01-22T22:02:37.174Z",
+    "updatedAt": "2026-01-22T22:02:37.174Z"
+  },
+  {
+    "_id": "69729e7dff2df7609d6d153b",
+    "title": "Databricks Machine Learning Professional",
+    "slug": "ml-professional",
+    "description": "End-to-end MLOps: Feature Stores, AutoML, MLflow, and Model Serving.",
+    "tags": [
+      "Machine Learning",
+      "Python",
+      "MLOps",
+      "Feature Store"
+    ],
+    "difficulty": "INTERMEDIATE",
+    "createdAt": "2026-01-22T22:02:37.187Z",
+    "updatedAt": "2026-01-22T22:02:37.187Z"
+  },
+  {
+    "_id": "69729e7dff2df7609d6d1542",
+    "title": "Deep Dive: Spark Performance Tuning",
+    "slug": "spark-optimization",
+    "description": "Master the art of tuning Spark applications. Learn about shuffles, skew, spills, and AQE.",
+    "tags": [
+      "Spark",
+      "PySpark",
+      "Data Engineering",
+      "Scala"
+    ],
+    "difficulty": "INTERMEDIATE",
+    "createdAt": "2026-01-22T22:02:37.196Z",
+    "updatedAt": "2026-01-22T22:02:37.196Z"
+  },
+  {
+    "_id": "69729e7dff2df7609d6d1549",
+    "title": "Generative AI Engineer",
+    "slug": "genai-engineer",
+    "description": "Build production RAG applications with Vector Search, LangChain, and MosaicML.",
+    "tags": [
+      "Machine Learning",
+      "Python",
+      "AI",
+      "Architecture"
+    ],
+    "difficulty": "ADVANCED",
+    "createdAt": "2026-01-22T22:02:37.203Z",
+    "updatedAt": "2026-01-22T22:02:37.203Z"
+  }
+]

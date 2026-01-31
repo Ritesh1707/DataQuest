@@ -1,0 +1,67 @@
+[
+  {
+    "_id": "6972894db49485e97adcdecb",
+    "quizId": "6972894db49485e97adcdeca",
+    "text": "Which layer of the Medallion Architecture is strictly append-only and stores raw data?",
+    "options": [
+      "Silver",
+      "Gold",
+      "Bronze",
+      "Platinum"
+    ],
+    "correctAnswer": "Bronze",
+    "points": 10
+  },
+  {
+    "_id": "6972894db49485e97adcdecc",
+    "quizId": "6972894db49485e97adcdeca",
+    "text": "What is the primary purpose of the Silver layer?",
+    "options": [
+      "Raw ingestion",
+      "Business aggregation",
+      "Data cleansing and conforming",
+      "Machine Learning inference"
+    ],
+    "correctAnswer": "Data cleansing and conforming",
+    "points": 10
+  },
+  {
+    "_id": "6972894db49485e97adcdecd",
+    "quizId": "6972894db49485e97adcdeca",
+    "text": "Which format is typically used for storage in the Lakehouse?",
+    "options": [
+      "CSV",
+      "Parquet/Delta",
+      "JSON",
+      "XML"
+    ],
+    "correctAnswer": "Parquet/Delta",
+    "points": 10
+  },
+  {
+    "_id": "6972894db49485e97adcdecf",
+    "quizId": "6972894db49485e97adcdece",
+    "text": "What happens to the data files when you DROP a Managed Table?",
+    "options": [
+      "They persist in storage",
+      "They are deleted",
+      "They are archived",
+      "Nothing"
+    ],
+    "correctAnswer": "They are deleted",
+    "points": 10
+  },
+  {
+    "_id": "6972894db49485e97adcded0",
+    "quizId": "6972894db49485e97adcdece",
+    "text": "In an External Table, who manages the metadata?",
+    "options": [
+      "The Cloud Provider",
+      "You",
+      "Databricks (Metastore)",
+      "No one"
+    ],
+    "correctAnswer": "Databricks (Metastore)",
+    "points": 10
+  }
+]

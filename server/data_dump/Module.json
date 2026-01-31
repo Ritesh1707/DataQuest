@@ -1,0 +1,98 @@
+[
+  {
+    "_id": "69729e7dff2df7609d6d1525",
+    "title": "The Lakehouse Paradigm",
+    "description": "Medallion Architecture & Data Quality",
+    "order": 1,
+    "courseId": "69729e7dff2df7609d6d1524",
+    "createdAt": "2026-01-22T22:02:37.161Z"
+  },
+  {
+    "_id": "69729e7dff2df7609d6d1528",
+    "title": "Performance Optimization",
+    "description": "Z-Ordering, Partitioning, and Skipping",
+    "order": 2,
+    "courseId": "69729e7dff2df7609d6d1524",
+    "createdAt": "2026-01-22T22:02:37.166Z"
+  },
+  {
+    "_id": "69729e7dff2df7609d6d152b",
+    "title": "Unity Catalog Governance",
+    "description": "Security & Lineage",
+    "order": 3,
+    "courseId": "69729e7dff2df7609d6d1524",
+    "createdAt": "2026-01-22T22:02:37.170Z"
+  },
+  {
+    "_id": "69729e7dff2df7609d6d152f",
+    "title": "Databricks Workspace Foundations",
+    "description": "Notebooks, compute, and repos.",
+    "order": 1,
+    "courseId": "69729e7dff2df7609d6d152e",
+    "createdAt": "2026-01-22T22:02:37.175Z"
+  },
+  {
+    "_id": "69729e7dff2df7609d6d1532",
+    "title": "Relational Entities on Databricks",
+    "description": "Databases, Tables, and Views.",
+    "order": 2,
+    "courseId": "69729e7dff2df7609d6d152e",
+    "createdAt": "2026-01-22T22:02:37.177Z"
+  },
+  {
+    "_id": "69729e7dff2df7609d6d1535",
+    "title": "ELT with Spark SQL",
+    "description": "Extract, Load, Transform using SQL.",
+    "order": 3,
+    "courseId": "69729e7dff2df7609d6d152e",
+    "createdAt": "2026-01-22T22:02:37.181Z"
+  },
+  {
+    "_id": "69729e7dff2df7609d6d1538",
+    "title": "Delta Live Tables (DLT)",
+    "description": "Declarative ETL pipelines.",
+    "order": 4,
+    "courseId": "69729e7dff2df7609d6d152e",
+    "createdAt": "2026-01-22T22:02:37.184Z"
+  },
+  {
+    "_id": "69729e7dff2df7609d6d153c",
+    "title": "Experiment Tracking",
+    "description": "Managing experiments with MLflow.",
+    "order": 1,
+    "courseId": "69729e7dff2df7609d6d153b",
+    "createdAt": "2026-01-22T22:02:37.188Z"
+  },
+  {
+    "_id": "69729e7dff2df7609d6d153f",
+    "title": "Feature Engineering",
+    "description": "The Databricks Feature Store.",
+    "order": 2,
+    "courseId": "69729e7dff2df7609d6d153b",
+    "createdAt": "2026-01-22T22:02:37.190Z"
+  },
+  {
+    "_id": "69729e7dff2df7609d6d1543",
+    "title": "Understanding the Catalyst Optimizer",
+    "description": "How Spark executes your code.",
+    "order": 1,
+    "courseId": "69729e7dff2df7609d6d1542",
+    "createdAt": "2026-01-22T22:02:37.197Z"
+  },
+  {
+    "_id": "69729e7dff2df7609d6d1546",
+    "title": "Handling Data Skew",
+    "description": "Strategies for skewed joins.",
+    "order": 2,
+    "courseId": "69729e7dff2df7609d6d1542",
+    "createdAt": "2026-01-22T22:02:37.200Z"
+  },
+  {
+    "_id": "69729e7dff2df7609d6d154a",
+    "title": "RAG Foundations",
+    "description": "Retrieval Augmented Generation",
+    "order": 1,
+    "courseId": "69729e7dff2df7609d6d1549",
+    "createdAt": "2026-01-22T22:02:37.204Z"
+  }
+]

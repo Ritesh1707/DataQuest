@@ -1,0 +1,98 @@
+[
+  {
+    "_id": "69729e7dff2df7609d6d1526",
+    "title": "Medallion Architecture Design",
+    "content": "\n# Medallion Architecture: The Foundation of Lakehouse\n\nThe **Medallion Architecture** is a data design pattern used to logically organize data in a Lakehouse. It aims to incrementally improve the structure and quality of data as it flows through the architecture (from Bronze -> Silver -> Gold).\n\n## The Three Layers\n\n### 1. Bronze Layer (Raw Ingestion)\n- **Objective:** Maintain the raw state of data sources.\n- **Characteristics:** Immutable, Append-Only.\n- **Format:** Often stored in optimized formats like Parquet/Delta, but retains the original schema.\n- **Usage:** Replayability. If you find a bug in your transformation logic later, you can always reprocess from Bronze.\n\n### 2. Silver Layer (Refined/Cleansed)\n- **Objective:** Match, merge, conform, and cleanse data (\"Enterprise View\").\n- **Transformations:** Filtering nulls, deduplication, schema enforcement, data type casting.\n- **Usage:** Ad-hoc analysis, data science, and operational reporting.\n\n### 3. Gold Layer (Business-Level Aggregates)\n- **Objective:** Consumption-ready for business use cases.\n- **Structure:** Often denormalized (Star Schema) or aggregated.\n- **Usage:** PowerBI, Tableau, executive dashboards.\n\n## Why this matters?\nThis architecture simplifies the data pipeline, improves data quality, and allows for distinct personas (Data Engineers work on Bronze/Silver, Analysts on Gold) to collaborate effectively.\n    ",
+    "order": 1,
+    "moduleId": "69729e7dff2df7609d6d1525",
+    "createdAt": "2026-01-22T22:02:37.163Z"
+  },
+  {
+    "_id": "69729e7dff2df7609d6d1529",
+    "title": "Z-Ordering and Data Skipping",
+    "content": "\n# Z-Ordering & Data Skipping\n\nOne of the most powerful features of Delta Lake on Databricks is the ability to skip reading irrelevant data. This is achieved through **Data Skipping** and **Z-Ordering**.\n\n## How Data Skipping Works\nDelta Lake automatically collects min/max statistics for every column in every file written. When a query contains a filter (e.g., `WHERE id = 5`), Databricks checks these stats. If the value `5` falls outside the min/max range of a file, that file is completely skipped.\n\n## What is Z-Ordering?\nZ-Ordering is a technique to co-locate related information in the same set of files. It maps multidimensional data to one dimension while preserving locality.\n\n### When to Z-Order?\n- High Cardinality columns (e.g., `CustomerID`, `Timestamp`).\n- Columns frequently used in `WHERE` clauses.\n\n### Partitioning vs. Z-Ordering\n- **Partitioning**: Best for low cardinality (Date, Region). Creates physical directories.\n- **Z-Ordering**: Best for high cardinality within partitions.\n\n**Command:**\n```sql\nOPTIMIZE events\nZORDER BY (eventType, timestamp)\n```\n    ",
+    "order": 1,
+    "moduleId": "69729e7dff2df7609d6d1528",
+    "createdAt": "2026-01-22T22:02:37.168Z"
+  },
+  {
+    "_id": "69729e7dff2df7609d6d152c",
+    "title": "The Three-Level Namespace",
+    "content": "\n# Unity Catalog: The Three-Level Namespace\n\nUnity Catalog provides a unified governance layer for all data and AI assets across your Databricks workspaces. The core of this model is the **Three-Level Namespace**.\n\n## Structure\n`catalog.schema.table`\n\n1.  **Catalog**: The top-level container. Typically maps to a business unit (e.g., `finance_prod`) or environment (`dev`, `prod`).\n2.  **Schema (Database)**: Logical grouping of tables and views (e.g., `ap_invoices`, `employee_records`).\n3.  **Table/View/Volume**: The actual data asset.\n\n## Key Benefits\n- **No more Workspace Silos**: A user in Workspace A can query data managed by Workspace B if they have permissions on the Catalog.\n- **Centralized Audit Logs**: Every access attempt is logged centrally.\n- **Data Lineage**: Automatically track column-level lineage from source to dashboard.\n\n## Managing Permissions\nSQL-standard commands are used to manage access:\n```sql\nGRANT SELECT ON CATALOG prod TO data_scientists;\nGRANT CREATE TABLE ON SCHEMA proj_alpha TO engineering_team;\n```\n    ",
+    "order": 1,
+    "moduleId": "69729e7dff2df7609d6d152b",
+    "createdAt": "2026-01-22T22:02:37.171Z"
+  },
+  {
+    "_id": "69729e7dff2df7609d6d1530",
+    "title": "Working with Notebooks",
+    "content": "\n# Databricks Notebooks\n\nDatabricks Notebooks are a collaborative feature that allows you to create, run, and share code and visualizations. They support multiple languages (Python, SQL, Scala, R) within the same notebook.\n\n## Key Features\n- **Magic Commands**: Use `%python`, `%sql`, `%sh` to switch languages or run shell commands.\n- **Markdown Support**: Document your code using standard markdown (like this text!).\n- **Visualizations**: built-in plotting tools (display() function) and support for libraries like Matplotlib.\n- **Widget API**: Create interactive parameters for your notebooks.\n\n## Running Notebooks from Notebooks\nYou can modularize your code by calling one notebook from another using the `%run` magic command.\n`%run ./Setup_Variables`\n\nThis executes the referenced notebook in the current context, making all defined variables and functions available.\n    ",
+    "order": 1,
+    "moduleId": "69729e7dff2df7609d6d152f",
+    "createdAt": "2026-01-22T22:02:37.175Z"
+  },
+  {
+    "_id": "69729e7dff2df7609d6d1533",
+    "title": "Managed vs External Tables",
+    "content": "\n# Managed vs. External Tables\n\nWhen creating tables in Databricks (and Hive metastore), understanding the difference between Managed and External tables is critical for data governance and storage management.\n\n## Managed Tables (Default)\n- **Command**: `CREATE TABLE table_name ...`\n- **Behavior**: Databricks manages **both** the metadata (in the metastore) and the actual data files (in DBFS or managed cloud storage).\n- **Dropping**: If you `DROP TABLE`, the data files **are deleted** immediately.\n\n## External (Unmanaged) Tables\n- **Command**: `CREATE TABLE table_name LOCATION 's3://...'`\n- **Behavior**: Databricks manages the metadata, but you manage the data files in your own storage bucket.\n- **Dropping**: If you `DROP TABLE`, the metadata is removed, but the data files **persist** in storage.\n\n## Best Practice\nUse **Managed Tables** for intermediate data and standard ET L. Use **External Tables** when data needs to be accessed by tools outside of Databricks or when you need strict control over file retention policies.\n    ",
+    "order": 1,
+    "moduleId": "69729e7dff2df7609d6d1532",
+    "createdAt": "2026-01-22T22:02:37.177Z"
+  },
+  {
+    "_id": "69729e7dff2df7609d6d1536",
+    "title": "Writing to Delta Tables",
+    "content": "\n# Writing to Delta Tables\n\nSpark SQL is the primary interface for many Data Engineers. Delta Lake brings ACID transactions to your big data workloads.\n\n## CTAS (Create Table As Select)\nThe most common pattern for ELT is the CTAS statement. It infers the schema from the query results and creates the table automatically.\n```sql\nCREATE TABLE silver_users\nAS SELECT id, name, email\nFROM bronze_users\nWHERE status = 'Active'\n```\n\n## MERGE INTO (Upserts)\nHandling updates and inserts (\"upserts\") is complex in traditional data lakes. Delta makes it easy with `MERGE INTO`.\n```sql\nMERGE INTO target t \nUSING source s ON t.id = s.id\nWHEN MATCHED THEN UPDATE SET t.data = s.data\nWHEN NOT MATCHED THEN INSERT *\n```\n    ",
+    "order": 1,
+    "moduleId": "69729e7dff2df7609d6d1535",
+    "createdAt": "2026-01-22T22:02:37.182Z"
+  },
+  {
+    "_id": "69729e7dff2df7609d6d1539",
+    "title": "Defining DLT Pipelines",
+    "content": "\n# Delta Live Tables (DLT)\n\nDLT is a framework for building reliable, maintainable, and testable data processing pipelines. Instead of defining strictly procedural tasks, you define the *final state* of your tables.\n\n## Expectations (Data Quality)\nDLT treats data quality as a first-class citizen. You can define **Expectations** to enforce constraints.\n\n- **EXPECT**: Warns in the event log but keeps data.\n- **EXPECT ... ON VIOLATION DROP ROW**: Discards the bad record.\n- **EXPECT ... ON VIOLATION FAIL UPDATE**: Stops the pipeline execution.\n\n## Syntax\n```sql\nCREATE LIVE TABLE valid_orders\n(CONSTRAINT valid_amount EXPECT (amount > 0) ON VIOLATION DROP ROW)\nAS SELECT * FROM live.raw_orders\n```\n    ",
+    "order": 1,
+    "moduleId": "69729e7dff2df7609d6d1538",
+    "createdAt": "2026-01-22T22:02:37.184Z"
+  },
+  {
+    "_id": "69729e7dff2df7609d6d153d",
+    "title": "MLflow Tracking API",
+    "content": "\n# MLflow Tracking\n\nMachine Learning development is iterative. You test hundreds of parameters (hyperparameters) to find the best model. Keeping track of these offline (spreadsheets) is painful.\n\n## The MLflow Tracking Server\nA centralized repository to log every run, including:\n- **Parameters**: Learning rate, tree depth, etc.\n- **Metrics**: Accuracy, RMSE, AUC.\n- **Artifacts**: The serialized model file (pickle), plots, images.\n- **Metadata**: Source code commit hash, start/end time.\n\n## Usage\n```python\nimport mlflow\n\nwith mlflow.start_run():\n    model = train_model(X, y, params)\n    mlflow.log_param(\"alpha\", 0.5)\n    mlflow.log_metric(\"rmse\", 0.89)\n    mlflow.sklearn.log_model(model, \"model\")\n```\n    ",
+    "order": 1,
+    "moduleId": "69729e7dff2df7609d6d153c",
+    "createdAt": "2026-01-22T22:02:37.189Z"
+  },
+  {
+    "_id": "69729e7dff2df7609d6d1540",
+    "title": "Creating Feature Tables",
+    "content": "\n# Databricks Feature Store\n\nA Feature Store is a centralized repository that enables data scientists to find and share features and also ensures that the same code used for computing feature values is used for model training and inference.\n\n## The Training-Serving Skew Problem\nOften, features are created in batch (Python/SQL) for training. But at inference time (real-time), the logic must be rewritten in Java/C++ or running against a different database. This causes \"skew\" where the feature values differ.\n\n## Solution\nThe Feature Store solves this by being the **Single Source of Truth**.\n1. **Compute features once.**\n2. **Write to Feature Store** (backed by Delta Lake).\n3. **Train**: Fetch features for a training set.\n4. **Serve**: Real-time lookup for online serving.\n\n## Creation\n```python\nfs = FeatureStoreClient()\nfs.create_table(\n    name=\"recommender_system.customer_features\",\n    primary_keys=[\"customer_id\"],\n    df=customer_df,\n    description=\"Customer spending habits\"\n)\n```\n    ",
+    "order": 1,
+    "moduleId": "69729e7dff2df7609d6d153f",
+    "createdAt": "2026-01-22T22:02:37.191Z"
+  },
+  {
+    "_id": "69729e7dff2df7609d6d1544",
+    "title": "Plans and Optimization",
+    "content": "\n# Catalyst Optimizer\nSpark SQL uses the Catalyst Optimizer to optimize all queries written in Spark SQL and the DataFrame API.\n\n## The Phases\n1. **Analysis**: Resolving references.\n2. **Logical Optimization**: Rule-based optimizations (predicate pushdown).\n3. **Physical Planning**: Cost-based optimization (join strategies).\n4. **Code Generation**: Tungsten engine generates Java bytecode.\n    ",
+    "order": 1,
+    "moduleId": "69729e7dff2df7609d6d1543",
+    "createdAt": "2026-01-22T22:02:37.198Z"
+  },
+  {
+    "_id": "69729e7dff2df7609d6d1547",
+    "title": "Salting and AQE",
+    "content": "\n# Data Skew\nSkew occurs when one partition has significantly more data than others, causing long-tail tasks.\n\n## Solutions\n1. **AQE (Adaptive Query Execution)**: Automatically splits large skewed partitions.\n2. **Salting**: Adding a random key to redistribute data evenly during a join.\n    ",
+    "order": 1,
+    "moduleId": "69729e7dff2df7609d6d1546",
+    "createdAt": "2026-01-22T22:02:37.201Z"
+  },
+  {
+    "_id": "69729e7dff2df7609d6d154b",
+    "title": "Vector Search Concepts",
+    "content": "\n# Vector Search\nTo enable LLMs to answer questions about *your* private data, you need RAG.\n\n## Embeddings\nConvert text into high-dimensional vectors. Similar meanings are close in space.\n\n## Vector Database\nDatabricks Vector Search is a serverless vector database integrated with Unity Catalog. \n    ",
+    "order": 1,
+    "moduleId": "69729e7dff2df7609d6d154a",
+    "createdAt": "2026-01-22T22:02:37.204Z"
+  }
+]

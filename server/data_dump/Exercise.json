@@ -1,0 +1,98 @@
+[
+  {
+    "_id": "69729e7dff2df7609d6d1527",
+    "prompt": "Task: Filter nulls from the raw dataframe.",
+    "starterCode": "const df_silver = df_bronze.",
+    "solution": "dropDuplicates",
+    "order": 1,
+    "lessonId": "69729e7dff2df7609d6d1526"
+  },
+  {
+    "_id": "69729e7dff2df7609d6d152a",
+    "prompt": "Construct OPTIMIZE cmd.",
+    "starterCode": "const sql = \"OPTIMIZE ...\"",
+    "solution": "ZORDER BY",
+    "order": 1,
+    "lessonId": "69729e7dff2df7609d6d1529"
+  },
+  {
+    "_id": "69729e7dff2df7609d6d152d",
+    "prompt": "Grant SELECT.",
+    "starterCode": "GRANT SELECT ...",
+    "solution": "GRANT",
+    "order": 1,
+    "lessonId": "69729e7dff2df7609d6d152c"
+  },
+  {
+    "_id": "69729e7dff2df7609d6d1531",
+    "prompt": "Task: Write a command to run a notebook named \"setup\".",
+    "starterCode": "// Magic command",
+    "solution": "%run",
+    "order": 1,
+    "lessonId": "69729e7dff2df7609d6d1530"
+  },
+  {
+    "_id": "69729e7dff2df7609d6d1534",
+    "prompt": "Task: Create a managed table named `sales`.",
+    "starterCode": "const sql = \"CREATE TABLE ...\"",
+    "solution": "CREATE TABLE",
+    "order": 1,
+    "lessonId": "69729e7dff2df7609d6d1533"
+  },
+  {
+    "_id": "69729e7dff2df7609d6d1537",
+    "prompt": "Task: Create a table `customers_silver` from `customers_bronze`.",
+    "starterCode": "const sql = \"CREATE TABLE ...\"",
+    "solution": "AS SELECT",
+    "order": 1,
+    "lessonId": "69729e7dff2df7609d6d1536"
+  },
+  {
+    "_id": "69729e7dff2df7609d6d153a",
+    "prompt": "Task: Define a DLT expectation that drops invalid rows.",
+    "starterCode": "CONSTRAINT valid_id EXPECT (id IS NOT NULL) ...",
+    "solution": "ON VIOLATION DROP ROW",
+    "order": 1,
+    "lessonId": "69729e7dff2df7609d6d1539"
+  },
+  {
+    "_id": "69729e7dff2df7609d6d153e",
+    "prompt": "Task: Log a metric named \"accuracy\".",
+    "starterCode": "mlflow.log_metric(...)",
+    "solution": "log_metric",
+    "order": 1,
+    "lessonId": "69729e7dff2df7609d6d153d"
+  },
+  {
+    "_id": "69729e7dff2df7609d6d1541",
+    "prompt": "Task: Create a feature table with keys.",
+    "starterCode": "fs.create_table(...)",
+    "solution": "primary_keys",
+    "order": 1,
+    "lessonId": "69729e7dff2df7609d6d1540"
+  },
+  {
+    "_id": "69729e7dff2df7609d6d1545",
+    "prompt": "Task: Explain the role of Code Generation.",
+    "starterCode": "// Tungsten...",
+    "solution": "bytecode",
+    "order": 1,
+    "lessonId": "69729e7dff2df7609d6d1544"
+  },
+  {
+    "_id": "69729e7dff2df7609d6d1548",
+    "prompt": "Task: Enable AQE.",
+    "starterCode": "spark.conf.set(\"spark.sql.adaptive.enabled\", ...)",
+    "solution": "true",
+    "order": 1,
+    "lessonId": "69729e7dff2df7609d6d1547"
+  },
+  {
+    "_id": "69729e7dff2df7609d6d154c",
+    "prompt": "Task: Select an embedding model.",
+    "starterCode": "const model = \"bge-large-en\"",
+    "solution": "bge-large-en",
+    "order": 1,
+    "lessonId": "69729e7dff2df7609d6d154b"
+  }
+]
